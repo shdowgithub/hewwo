@@ -1,1703 +1,912 @@
-<div id="maingame" style="width:1273px;height:576px;">
-          <!-- #maingamecontent -->
-          <div id="maingamecontent" style="width:1273px;height:576px">
-            <div id="flashframecontent" style="width:1273px;height:576px">
-              <table class="game_table">
-                <tbody>
-                  <tr>
-                     <td colspan="2" class="links_connect">
-                       <div class="user_connection hinted_value">
-                         <em class="logged_in_user mrs" style="display:none;">(<span class="logged_in_user_username"></span>)</em>
-                         <span id="chat_connected_indicator" class="spritegame spriteall" style="">Connected</span>
-                         <span id="chat_limited_connection_indicator" class="spritegame spriteall" style="display:none;">Limited connection</span>
-                         <span id="chat_disconnected_indicator" class="spritegame spriteall" style="display: none;">Disconnected</span>
-                         <span id="cloud_localOnly_indicator" class="spritecloud textreplace js-cloud-indicator" style="display:none;" title="Not Connected">Not Connected</span>
-                         <span id="cloud_remoteOnly_indicator" class="spritecloud textreplace js-cloud-indicator" style="display:none;" title="Not Connected">Remote Only</span>
-                         <span id="cloud_error_indicator" class="spritecloud textreplace js-cloud-indicator" style="display:none;" title="Error">Error</span>
-                         <span id="cloud_sync_indicator" class="spritecloud textreplace js-cloud-indicator" style="display:none;" title="Connected">Connected</span>
-                         <span id="cloud_syncing_indicator" class="spritecloud textreplace js-cloud-indicator" style="display:none;" title="Syncing">Syncing</span>
-                       </div>
-                       <script id="cloud_save_info_template" type="text/html">
-                        <div class="hover_item hover_top hover_right cloud_hover">
-                          <div class="hover_arrow_1"></div>
-                          <div class="hover_arrow_2"></div>
-                          <div class="hover_container pam">
-                            <p class="media mbs">
-                              <span class="kong_ico img" aria-hidden="true">%</span>
-                              <span class="bd"><strong>Cloud Saves</strong> are enabled for this game!</span></p>
-                            <p><em>Look for this icon for status and other games with cloud saves.</em></p>
-                          </div>
-                        </div>
-                       </script>
-                      
-<ul id="quicklinks">
-  <li id="cinematic_mode_quicklink" class="cinematic_link spritegame">
-    <a id="cinematic_mode_link" class="" href="#">Cinematic Mode</a>
-    <script>
-//<![CDATA[
-      Event.observe(document, 'game:activated', function() {
-        CinematicMode.hookUpCinematicQuicklink();
-      });
-
-//]]>
-</script>  </li>
-    <li class="instructions spritegame">
-      <a href="#" onclick="holodeck.revealFullInstructions(); return false;">Instructions</a>
-    </li>
-    <li id="quicklinks_star_ratings_block" class="rate my_rating"><span class="mrs">Rate:</span> <!--[if lte IE 7]><span class="inlinefix">.</span><![endif]--><span id="quicklinks_rating-indicator" class="spinner spinner_inverse" style="display:none" title="loading…">&ZeroWidthSpace;</span><ul id="star-rating-316009" class="star-rating spritegame lbOn"> <!-- leave inline for IE -->
-
-  <li><a class="star-1" title="Hated it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = 'You must have the Html plugin installed to rate this game.'
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$('#star-rating-316009').each(Element.hide); Element.show('quicklinks_rating-indicator');; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$('#star-rating-316009 a').each(Element.show); Element.hide('quicklinks_rating-indicator'); holodeck.recordAnalyticsEvent('Quick', 'Rate');;}, parameters:&quot;prefix=quicklinks_\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=1\u0026star_rating_class=star-rating&quot; + '&amp;authenticity_token=' + encodeURIComponent('sfKEnRawDJ+/t9z0cGN77N53tMAAH7Fau1j/gK7/ffZyGXHDo+5Sl4s0uwhfkL/QxDYZjeJWd6oIrYYTzAB5WA==')}); }; return false;">1</a></li>
-  <li><a class="star-2" title="Didn't like it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = 'You must have the Html plugin installed to rate this game.'
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$('#star-rating-316009').each(Element.hide); Element.show('quicklinks_rating-indicator');; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$('#star-rating-316009 a').each(Element.show); Element.hide('quicklinks_rating-indicator'); holodeck.recordAnalyticsEvent('Quick', 'Rate');;}, parameters:&quot;prefix=quicklinks_\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=2\u0026star_rating_class=star-rating&quot; + '&amp;authenticity_token=' + encodeURIComponent('g7fJb+KaFmRlThcqQ2EaDzrB1wvILZTWj2k1Rc6/i5VAXDwxV8RIbFHNcNZskt4zIIB6RipkUiY8nEzWrECPOw==')}); }; return false;">2</a></li>
-  <li><a class="star-3" title="Liked it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = 'You must have the Html plugin installed to rate this game.'
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$('#star-rating-316009').each(Element.hide); Element.show('quicklinks_rating-indicator');; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$('#star-rating-316009 a').each(Element.show); Element.hide('quicklinks_rating-indicator'); holodeck.recordAnalyticsEvent('Quick', 'Rate');;}, parameters:&quot;prefix=quicklinks_\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=3\u0026star_rating_class=star-rating&quot; + '&amp;authenticity_token=' + encodeURIComponent('0ObnReaXZZYrN5yyUpnM0Lqq4ugiJowIT6vjAuprUuwTDRIbU8k7nh+0+059agjsoOtPpcBvSvj8XpqRiJRWQg==')}); }; return false;">3</a></li>
-  <li><a class="star-4" title="Really liked it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = 'You must have the Html plugin installed to rate this game.'
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$('#star-rating-316009').each(Element.hide); Element.show('quicklinks_rating-indicator');; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$('#star-rating-316009 a').each(Element.show); Element.hide('quicklinks_rating-indicator'); holodeck.recordAnalyticsEvent('Quick', 'Rate');;}, parameters:&quot;prefix=quicklinks_\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=4\u0026star_rating_class=star-rating&quot; + '&amp;authenticity_token=' + encodeURIComponent('yfnE7kN53ppj+UTfX1hmgOmOSkk+RWGHLNG+32QYv0cKEjGw9ieAkld6IyNwq6K888/nBNwMp3efJMdMBue76Q==')}); }; return false;">4</a></li>
-  <li><a class="star-5" title="Loved it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = 'You must have the Html plugin installed to rate this game.'
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$('#star-rating-316009').each(Element.hide); Element.show('quicklinks_rating-indicator');; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$('#star-rating-316009 a').each(Element.show); Element.hide('quicklinks_rating-indicator'); holodeck.recordAnalyticsEvent('Quick', 'Rate');;}, parameters:&quot;prefix=quicklinks_\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=5\u0026star_rating_class=star-rating&quot; + '&amp;authenticity_token=' + encodeURIComponent('6s2zpUVWEQKl98fO628CgKHibKzeLqW/S3swur9ezRApJkb78AhPCpF0oDLEnMa8u6PB4TxnY0/4jkkp3aHJvg==')}); }; return false;">5</a></li>
-</ul>
-
-</li>
-  <li class="favorite spritegame lbOn" id="quicklinks_favorite_block">
-    
-<a id="quicklinks_favorite_game" class="user_specific" href="/accounts/KongregateHolodeckTemplateUsername/favorites.js?game_id=316009" onclick="$('quicklinks_favorite_game_indicator').show(); holodeck.recordAnalyticsEvent('Quick', 'Favorite'); new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, method:'post', parameters:'authenticity_token=' + encodeURIComponent('ZrOnZNrwgc09QcHzpYJ1lMB5kgZqfHIPxgIE9gBA94mlWFI6b67fxQnCpg+KcbGo2jg/S4g1tP91931lYr/zJw==')}); return false;">Favorite</a>
-<span id="quicklinks_favorite_game_indicator" class="spinner spinner_inverse" style="display:none" title="loading…">&ZeroWidthSpace;</span>
+<html lang="en">
+<head>
+<meta name="theme-color" content="#E77E7E">
+<meta property="og:type" content="website" />
+<meta property="og:see_also" content="https://ubg100.github.io/" />
+<meta property="og:locale" content="en_US" />
+<meta name="twitter:card" content="summary" />
+<link rel="canonical" href="https://ubg100.github.io/slope" />
+<meta property="og:url" content="https://ubg100.github.io/slope" />
+<meta property="og:title" content="Slope" />	<meta name="twitter:title" content="Slope" />
+<meta property="og:description" content="Play all your favorite games unblocked now!" />
+<meta name="twitter:description" content="Play all your favorite games unblocked now!" />
+<meta property="og:image" content="https://ubg100.github.io/ubg100.png">
+<script data-ad-client="ca-pub-5287266392597979" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="ubg100.png"/>
+<link rel="mask-icon" type="" href="ubg100.png" color="#111"/>
+<title>Slope</title>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-159383230-1"></script>
 <script>
-//<![CDATA[
-      active_user.addCapturedSelector('#quicklinks_favorite_block', true);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-//]]>
+  gtag('config', 'UA-159383230-1');
 </script>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
 
-  </li>
-  <li class="play_later lbOn" id="quicklinks_play_later_block" style="">
-    
-<a id="quicklinks_play_later_game" class="user_specific pln" href="/play_laters" onclick="$('quicklinks_play_later_game_indicator').show();; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, method:'post', onSuccess:function(request){$('quicklinks_play_later_game_indicator').hide();}, parameters:'game_id=316009' + '&amp;authenticity_token=' + encodeURIComponent('Q0jpyZGHAHTn1mxi8+jHOwQg9OkDqegHjXoIYJVZdjGAoxyXJNlefNNVC57cGwMHHmFZpOHgLvc+j3Hz96Zynw==')}); return false;"><span aria-hidden="true" class="kong_ico default prs">p</span><span aria-hidden="true" class="kong_ico add prs">+</span><span aria-hidden="true" class="kong_ico remove prs">-</span>Playlist</a>
-<span id="quicklinks_play_later_game_indicator" class="spinner spinner_inverse" style="display:none" title="loading…">&ZeroWidthSpace;</span>
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 15px;
+	line-height: 1.7;
+	color: #c4c3ca;
+	background-color: #1f2029;
+	overflow-x: hidden;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+}
+a {
+	cursor: pointer;
+}
+a:hover {
+	text-decoration: none;
+}
+
+/* #Cursor
+================================================== */
+
+.cursor,
+.cursor2,
+.cursor3{
+	position: fixed;
+	border-radius: 50%;	
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	left: -100px;
+	top: 50%;
+	mix-blend-mode: difference;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+}
+.cursor{
+	background-color: #fff;
+	height: 0;
+	width: 0;
+	z-index: 99999;
+}
+.cursor2,.cursor3{
+	height: 36px;
+	width: 36px;
+	z-index:99998;
+	-webkit-transition:all 0.3s ease-out;
+	transition:all 0.3s ease-out
+}
+.cursor2.hover,
+.cursor3.hover{
+	-webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+	transform:scale(2) translateX(-25%) translateY(-25%);
+	border:none
+}
+.cursor2{
+	border: 2px solid #fff;
+	box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+}
+.cursor2.hover{
+	background: rgba(255,255,255,1);
+	box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+@media screen and (max-width: 1200px){
+	.cursor,.cursor2,.cursor3{
+		display: none
+	}
+}
+
+/* #Primary style
+================================================== */
+
+.section {
+    position: relative;
+	width: 100%;
+	display: block;
+}
+.over-hide{
+	overflow: hidden;
+}
+.full-height {
+	height: 100vh;
+}
+
+/* #Navigation
+================================================== */
+ 
+.cd-header{
+    position: fixed;
+	width:100%;
+	top:0;
+	left:0;
+	z-index:100;
+} 
+.header-wrapper{
+    position: relative;
+	width: calc(100% - 100px);
+	margin-left: 50px;
+} 
+.logo-wrap {
+	position: absolute;
+	display:block;
+	left: 0%;
+	top: 25px;
+	cursor: pointer;
+}
+.logo-wrap a {
+	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 900;
+	font-size: 20px;
+	line-height: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: #fff;
+	transition : all 0.3s ease-out;
+}
+.logo-wrap a span{ 
+	color: #E77E7E;
+}
+.logo-wrap a:hover {
+	opacity: 0.9;
+}
+.nav-but-wrap{ 
+	position: relative;
+	display: inline-block;
+	float: right;
+	padding-left: 15px;
+	padding-top: 15px;
+	margin-top: 26px;
+	transition : all 0.3s ease-out;
+}
+.menu-icon {
+	height: 30px;
+	width: 30px;
+	position: relative;
+	z-index: 2;
+	cursor: pointer;
+	display: block;
+}
+.menu-icon__line {
+	height: 2px;
+	width: 30px;
+	display: block;
+	background-color: #fff;
+	margin-bottom: 7px;
+	cursor: pointer;
+	-webkit-transition: background-color .5s ease, -webkit-transform .2s ease;
+	transition: background-color .5s ease, -webkit-transform .2s ease;
+	transition: transform .2s ease, background-color .5s ease;
+	transition: transform .2s ease, background-color .5s ease, -webkit-transform .2s ease;
+}
+.menu-icon__line-left {
+	width: 16.5px;
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear;
+}
+.menu-icon__line-right {
+	width: 16.5px;
+	float: right;
+	-webkit-transition: all 200ms linear;
+	-moz-transition: all 200ms linear;
+	-o-transition: all 200ms linear;
+	-ms-transition: all 200ms linear;
+	transition: all 200ms linear;
+}
+.menu-icon:hover .menu-icon__line-left,
+.menu-icon:hover .menu-icon__line-right {
+	width: 30px;
+}
+.nav {
+	position: fixed;
+	z-index: 98;
+}
+.nav:before, .nav:after {
+	content: "";
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	background: rgba(20, 21, 26,0.6);
+	border-bottom-left-radius: 200%;
+	z-index: -1;
+	-webkit-transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, border-radius linear 0.8s;
+	transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, border-radius linear 0.8s;
+	transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, border-radius linear 0.8s;
+	transition: transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 0.6s, border-radius linear 0.8s;
+	-webkit-transform: translateX(100%) translateY(-100%);
+          transform: translateX(100%) translateY(-100%);
+}
+.nav:after {
+	background: rgba(9,9,12,1);
+	-webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.nav:before {
+	-webkit-transition-delay: .2s;
+          transition-delay: .2s;
+}
+.nav__content {
+	position: fixed;
+	visibility: hidden;
+	top: 50%;
+	margin-top: 20px;
+	-webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+	width: 100%;
+	text-align: center;
+}
+.nav__list {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	z-index: 2;
+}
+.nav__list-item {
+	position: relative;
+	display: block;
+	-webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+	opacity: 0;
+	text-align: center;
+	color: #fff;
+	overflow: hidden; 
+	font-family: 'Montserrat', sans-serif;
+	font-size: 8vh;
+	font-weight: 900;
+	line-height: 1.15;
+	letter-spacing: 3px;
+	-webkit-transform: translate(100px, 0%);
+          transform: translate(100px, 0%);
+	-webkit-transition: opacity .2s ease, -webkit-transform .3s ease;
+	transition: opacity .2s ease, -webkit-transform .3s ease;
+	transition: opacity .2s ease, transform .3s ease;
+	transition: opacity .2s ease, transform .3s ease, -webkit-transform .3s ease;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.nav__list-item a{ 
+	position: relative;
+	text-decoration: none;
+	color: rgba(255,255,255,0.6);
+	overflow: hidden; 
+	cursor: pointer;
+	padding-left: 5px;
+	padding-right: 5px;
+	font-weight: 900;
+	z-index: 2;
+	display: inline-block;
+	text-transform: uppercase;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear; 
+}
+.nav__list-item a:after{ 
+	position: absolute;
+	content: '';
+	top: 50%;
+	margin-top: -2px;
+	left: 50%;
+	width: 0;
+	height: 0;
+	opacity: 0;
+	background-color: #E77E7E;
+	z-index: 1;
+    -webkit-transition: all 200ms linear;
+    transition: all 200ms linear; 
+}
+.nav__list-item a:hover:after{ 
+	height: 4px;
+	opacity: 1;
+	left: 0;
+	width: 100%;
+}
+.nav__list-item a:hover{
+	color: rgba(255,255,255,1);
+}
+.nav__list-item.active-nav a{
+	color: rgba(255,255,255,1);
+}
+.nav__list-item.active-nav a:after{ 
+	height: 4px;
+	opacity: 1;
+	left: 0;
+	width: 100%;
+}
+body.nav-active .nav__content {
+	visibility: visible;
+}
+body.nav-active .menu-icon__line {
+	background-color: #fff;
+	-webkit-transform: translate(0px, 0px) rotate(-45deg);
+          transform: translate(0px, 0px) rotate(-45deg);
+}
+body.nav-active .menu-icon__line-left {
+	width: 15px;
+	-webkit-transform: translate(2px, 4px) rotate(45deg);
+          transform: translate(2px, 4px) rotate(45deg);
+}
+body.nav-active .menu-icon__line-right {
+	width: 15px;
+	float: right;
+	-webkit-transform: translate(-3px, -3.5px) rotate(45deg);
+          transform: translate(-3px, -3.5px) rotate(45deg);
+}
+body.nav-active .menu-icon:hover .menu-icon__line-left,
+body.nav-active .menu-icon:hover .menu-icon__line-right {
+	width: 15px;
+}
+body.nav-active .nav {
+	visibility: visible;
+}
+body.nav-active .nav:before, body.nav-active .nav:after {
+	-webkit-transform: translateX(0%) translateY(0%);
+          transform: translateX(0%) translateY(0%);
+	border-radius: 0;
+}
+body.nav-active .nav:after {
+	-webkit-transition-delay: .1s;
+          transition-delay: .1s;
+}
+body.nav-active .nav:before {
+	-webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+body.nav-active .nav__list-item {
+	opacity: 1;
+	-webkit-transform: translateX(0%);
+          transform: translateX(0%);
+	-webkit-transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
+	transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
+	transition: opacity .3s ease, transform .3s ease, color .3s ease;
+	transition: opacity .3s ease, transform .3s ease, color .3s ease, -webkit-transform .3s ease;
+}
+body.nav-active .nav__list-item:nth-child(0) {
+	-webkit-transition-delay: 0.7s;
+          transition-delay: 0.7s;
+}
+body.nav-active .nav__list-item:nth-child(1) {
+	-webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+body.nav-active .nav__list-item:nth-child(2) {
+	-webkit-transition-delay: 0.9s;
+          transition-delay: 0.9s;
+}
+body.nav-active .nav__list-item:nth-child(3) {
+	-webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+body.nav-active .nav__list-item:nth-child(4) {
+	-webkit-transition-delay: 1.1s;
+          transition-delay: 1.1s;
+}
+body.nav-active .nav__list-item:nth-child(5) {
+	-webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
+}
+body.nav-active .nav__list-item:nth-child(6) {
+	-webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
+}
+body.nav-active .nav__list-item:nth-child(7) {
+	-webkit-transition-delay: 1.4s;
+          transition-delay: 1.4s;
+}
+body.nav-active .nav__list-item:nth-child(8) {
+	-webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
+}
+body.nav-active .nav__list-item:nth-child(9) {
+	-webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+body.nav-active .nav__list-item:nth-child(10) {
+	-webkit-transition-delay: 1.7s;
+          transition-delay: 1.7s;
+}
+.test {
+  height: 1000px;
+}
+.content {
+    position: relative;
+	margin: auto;
+	width: 1012px;
+	display: block;
+	overflow: hidden;
+	height: 650px;
+	border-radius: 25px;
+  	border: 5px solid #E77E7E;
+	top: 100px;
+}
+/* #back to top stuff
+================================================== */
+
+@import url('https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext,vietnamese');
+
+
+:root {
+	font-size: 20px;
+	--red: #da2c4d;
+	--yellow: #f8ab37;
+	--green: #2ecc71;
+	--white: #ffffff;
+	--grey-light: #f2f7f9;
+	--grey: #ecedf3;
+	--black: #080808;
+	--black-blue: #1f2029;
+	--black-blue-light: #353746;
+	--black-blue-light-2: #404255;
+	--black-blue-light-3: #4b4d64;
+	--black-light: #424455;
+  --ubg: #E77E7E;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 1.65;
+	color: var(--grey);
+	background-color: var(--black-blue);
+	overflow-x: hidden;
+	letter-spacing: 0.2px;
+	-webkit-transition: all 200ms linear;
+	transition: all 200ms linear; 
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+.section {
+    position: relative;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	height: 100vh;
+}
+
+/* #Progress wrap starts here
+================================================== */
+
+.progress-wrap {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	border-radius: 50px;
+	box-shadow: inset  0 0 0 2px rgba(255,255,255,0.2);
+	z-index: 97;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(15px);
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.progress-wrap.active-progress {
+	opacity: 1;
+	visibility: visible;
+	transform: translateY(0);
+}
+.progress-wrap::after {
+	position: absolute;
+	font-family: 'unicons';
+	content: '\e84b';
+	text-align: center;
+	line-height: 46px;
+	font-size: 24px;
+	color: var(--ubg);
+	left: 0;
+	top: 0;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 1;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.progress-wrap:hover::after {
+	opacity: 0;
+}
+.progress-wrap::before {
+	position: absolute;
+	font-family: 'unicons';
+	content: '\e84b';
+	text-align: center;
+	line-height: 46px;
+	font-size: 24px;
+	opacity: 0;
+	background-image: linear-gradient(298deg, var(--red), var(--yellow));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	left: 0;
+	top: 0;
+	height: 46px;
+	width: 46px;
+	cursor: pointer;
+	display: block;
+	z-index: 2;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.progress-wrap:hover::before {
+	opacity: 1;
+}
+.progress-wrap svg path { 
+	fill: none; 
+}
+.progress-wrap svg.progress-circle path {
+	stroke: var(--ubg);
+	stroke-width: 4;
+	box-sizing:border-box;
+	-webkit-transition: all 200ms linear;
+    transition: all 200ms linear;
+}
+.myButton {
+	background-color:#E77E7E;
+	border-radius:10px;
+	display: inline-block;
+	cursor: pointer;
+	color:#fff;
+    font-family: Montserrat, sans-serif;
+	font-size: 17px;
+    font-weight: 400;
+	padding: 16px 16px;
+	text-decoration: none;
+	margin-top: 110px;
+}
+.myButton:hover {
+	background-color:#A25858;
+    transition: all 0.3s ease 0s;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+.fsbutton {
+	text-align: center;
+	margin-right: 860px;
+}
+.titletext{
+	font-family: Montserrat, sans-serif;
+    margin-right: 380px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+i.material-icons {
+  font-size: 50px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tabs {
+  width: 650px;
+  float: none;
+  list-style: none;
+  position: relative;
+  margin: 80px 0 200px 10px;
+  text-align: left;
+}
+.tabs li {
+  float: left;
+  display: block;
+}
+.tabs input[type="radio"] {
+  position: absolute;
+  top: 0;
+  left: -9999px;
+}
+.tabs label {
+  display: block;
+  padding: 14px 21px;
+  border-radius: 15px 15px 0 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-transform: uppercase;
+  background: #E77E7E;
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.tabs label:hover {
+  background: #A25858;
+}
+.tabs .tab-content {
+  z-index: 2;
+  display: none;
+  overflow: hidden;
+  width: 1012px;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 25px;
+  position: absolute;
+  top: 53px;
+  left: 0;
+  background: #A25858;
+}
+.tabs [id^="tab"]:checked + label {
+  top: 0;
+  padding-top: 17px;
+  background: #A25858;
+}
+.tabs [id^="tab"]:checked ~ [id^="tab-content"] {
+  display: block;
+}
+i.tabz {
+  font-size: 30px;
+  vertical-align: middle;
+  position: relative;
+  top: -2.5px;
+  right: 5px;
+  color: white;
+}
+p.desc{
+    font-size: 20px;
+    line-height: 2;
+}
+</style>
 <script>
-//<![CDATA[
-      active_user.addCapturedSelector('#quicklinks_play_later_block', true);
-
-//]]>
+  window.console = window.console || function(t) {};
 </script>
-
-  </li>
-    <li id="quicklinks_facebook" class="socialshare">
-      <div class="fb-like fb_iframe_widget" data-href="https://www.kongregate.com/games/siread/retro-bowl" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" colorscheme="light" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=218282488189771&amp;color_scheme=light&amp;container_width=100&amp;href=https%3A%2F%2Fwww.kongregate.com%2Fgames%2Fsiread%2Fretro-bowl&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=450"><span style="vertical-align: bottom; width: 90px; height: 20px;"><iframe name="f2a330a4c16b958" width="450px" height="1000px" data-testid="fb:like Facebook Social Plugin" title="fb:like Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v2.6/plugins/like.php?app_id=218282488189771&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df30c81d2347d088%26domain%3Dwww.kongregate.com%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Fwww.kongregate.com%252Ff8c7803910b5%26relation%3Dparent.parent&amp;color_scheme=light&amp;container_width=100&amp;href=https%3A%2F%2Fwww.kongregate.com%2Fgames%2Fsiread%2Fretro-bowl&amp;layout=button_count&amp;locale=en_US&amp;sdk=joey&amp;send=false&amp;show_faces=false&amp;width=450" style="border: none; visibility: visible; width: 90px; height: 20px;" class=""></iframe></span></div>
-    </li>
-  <script>
-//<![CDATA[
-    (function() {
-    }).runWhenDomLoaded();
-
-//]]>
-</script></ul>
-
-                    </td>
-                  </tr>
-                  <tr>
-                    <td id="gameholder" style="width:970px;">
-                      <script>
-//<![CDATA[
-                        if(metricTracker) {
-                          var now = new Date().getTime(),
-                              time = (now > 0 && _lts && _lts > 0) ? (now - _lts) : -1;
-                          metricTracker.trackTimedEvent('BeforeGameEmbed', "Retro Bowl", time);
-                        }
-
-//]]>
-</script>                      
-                      
-                      
-                      <div id="game" style="width: 970px; height: 550px; visibility: visible;" class="-ce-ignore">
-                        <p id="cinematic_close_container"><a style="display:none" id="cinematic_close_link" class="spritegame textreplace" href="#" onclick="CinematicMode.deactivateCinematicMode(); return false;">close</a></p>
-                          <iframe id="gameiframe" name="gameiframe" scrolling="auto" border="0" frameborder="0" style="width: 970px; height: 550px; position: absolute; top: 0px; left: 0px;" class="dont_hide" allowfullscreen="allowfullscreen"></iframe><script>
-//<![CDATA[
-              gameLoader = new Kongregate.GameLoader(function(urlOptions) {
-                  new GameIframe({"auto_resize":null,"iframe_url":"//game316009.konggames.com/gamez/0031/6009/live/index.html?kongregate_game_version=1633352913\u0026kongregate_host=www.kongregate.com","alternate_game_file_url":null,"game_width":970,"game_height":550,"max_game_width":null,"max_game_height":null,"game_left":0,"game_top":0,"iframe_class":"dont_hide","host":"https://www.kongregate.com","api_host":"https://api.kongregate.com","api_path":"https://chat.kongregate.com/flash/API_AS3_d43c4b859e74432475c1627346078677.swf","preview":false,"game_permalink":"retro-bowl","game_id":316009,"game_url":"http://www.kongregate.com/games/siread/retro-bowl","game_version":1633352913,"flash_var_prefix":"kv_","post_message":true,"iframe_host":"https://game316009.konggames.com","game_host":"https://game316009.konggames.com","channel_id":encodeURIComponent(channel_id),"svid":"d081d365-5dd6-4d25-a6e0-ee2e99637b9d","game_type":"html"}, urlOptions, channel_id).createGameIframeElement();
-
-          },
-          false,
-          false);
-
-      function activateGame(urlOptions) {
-        if (activateGame._alreadyActivated) {
-          Kongregate.Log.warn('Game already activated, ignoring call');
-          return;
-        }
-        activateGame._alreadyActivated = true;
-
-        if (!urlOptions) {
-          urlOptions = '';
-        }
-        gameLoader.loadGame(urlOptions);
-        document.fire('game:activated');
-      };
-
-//]]>
+<script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
 </script>
-                        <p class="bug_game cinemode_bug_link footnote" id="cinematic_bug_report" style="display: none">
-                          <span id="cinematic_bug_link"><a href="/cinematic_bug_counters/increment?game_id=316009" onclick="$('cinematic_bug_link').hide(); $('cinematic_bug_spinner').show(); new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onFailure:function(request){new Effect.Highlight('cinematic_bug_report', {startcolor: '#cc2222'});$('cinematic_bug_spinner').hide()}, onSuccess:function(request){$('cinematic_bug_link').update('Thank You!').show(); $('cinematic_bug_spinner').hide()}, parameters:'authenticity_token=' + encodeURIComponent('+CGM2BGIMI4vGwJEDENxKxcyjmaGVq0tOseBdTpWP7c7ynmGpNZuhhuYZbgjsLUXDXMjK2Qfa92JMvjmWKk7GQ==')}); return false;">Report Cinematic Bug</a></span><span class="spinner" id="cinematic_bug_spinner" style="display: none">...</span>
-                        </p>
-                      </div>
-                      <noscript>
-  <div id="nojs" class="noscript">
-    <p>To play games on Kongregate, <br>you must have Javascript enabled!</p>
-  </div>
-</noscript>
-
-<div id="noflash" class="noscript" style="display:none;">
-  <p>
-    <svg class="noscript__flash" xmlns="http://www.w3.org/2000/svg" width="50" height="50">
-      <path fill="#900" d="M0 0h50v50H0z"></path>
-      <path fill="#fff" fill-rule="evenodd" d="M34.918 16.45a9.338 9.338 0 0 1 2.834-.4v-5.865a14.214 14.214 0 0 0-11.209 4.793 18.719 18.719 0 0 0-2.8 4.273l-2.1 4.649a36.632 36.632 0 0 1-1.879 4.186 16.032 16.032 0 0 1-1.943 3.118 7.267 7.267 0 0 1-2.548 1.906 9.021 9.021 0 0 1-3.567.664v5.919a14.307 14.307 0 0 0 11.21-4.793 22.127 22.127 0 0 0 2.293-3.349l1.783-3.7h7.483v-5.89h-4.939a18.172 18.172 0 0 1 1.465-2.534 7.922 7.922 0 0 1 1.719-1.819 6.817 6.817 0 0 1 2.198-1.158z"></path>
-    </svg>
-    To play this game on Kongregate, you must have a current version of Adobe’s Flash Player enabled.
-  </p>
-  <p>
-    <a href="http://www.adobe.com/go/getflashplayer" class="btn noscript__btn">Install or enable Adobe Flash Player</a>
-  </p>
-  <p class="noscript__supernova" style="display: block;">Alternatively, we also recommend the <a href="https://chrome.google.com/webstore/detail/supernova-swf-enabler/mhmphnocemakkjdampibehejoaleebpo">SuperNova! Plugin for Chrome</a> as an easy way to enable Flash content in the browser.</p>
+</head>
+<body translate="no" id="ancss">
+<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css'>
+<header class="cd-header">
+<div class="header-wrapper">
+<div class="logo-wrap">
+<a href="https://ubg100.github.io/" class="hover-target"><span>UBG</span>100</a>
+<a href="https://ubg100.github.io/" class="hover-target"><img id="myImage" src="ubg100.png"></a>
 </div>
-
-<script type="text/javascript">
-  var hasFlash = true; // matches version in _game.html.erb
-  if (active_user.showFlashWarning(hasFlash)) {
-    
-    //$('game').hide();
-    //$('noflash').show();
-
-  }
-
-  if (!!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime)) {
-    document.querySelector('.noscript__supernova').style.display = 'block';
-  }
-</script>
-
-                    </td>
-                    <td id="chat_container_cell">
-                      <div id="chat_container" class="chatholder" style="width:300px;height:550px;">
-<link rel="canonical" href="https://www.kongregate.com/games/siread/retro-bowl">
-<div id="kong_game_ui">
-  <ul id="main_tab_set" class="main_tabs">
-    <li class="tab" id="chat_tab"><a href="#chat_tab_pane" class="">Chat</a></li>
-    <li class="tab" id="game_tab"><a href="#game_tab_pane" class="">Game</a></li>
-      <li class="tab" id="more_games_tab">
-        <a href="#more_games_tab_pane" id="more_games" class="">
-          <span style="float: left">More Games</span>
-        </a>
-      </li>
-
-
-    <li class="tab closeable" id="rate_this_game_tab" style="display:none;">
-      <a href="#rate_this_game_tab_pane" id="recommended" class="">
-        <span style="float: left">Rate</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="signup_tab" style="display: none;">
-      <a href="#signup_tab_pane" id="signup" class="active">
-        <span style="float: left">Sign Up</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="signin_tab" style="display:none;">
-      <a href="#signin_tab_pane" id="signin" class="">
-        <span style="float: left">Sign In</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="other_tab" style="display:none;">
-      <a href="#alert_tab_pane" id="alert" class="">
-        <span style="float: left">Alert</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="accomplishment_awarded_tab" style="display:none;">
-        <a href="#accomplishment_awarded_tab_pane" id="accomplishment_awarded" class="">
-          <span style="float: left">Award</span>
-          <span class="close_tab_link spritegame spriteall">Close</span>
-        </a>
-    </li>
-    <li class="tab closeable" id="accomplishment_group_awarded_tab" style="display:none;">
-        <a href="#accomplishment_group_awarded_tab_pane" id="accomplishment_group_awarded" class="">
-          <span style="float: left">Award</span>
-          <span class="close_tab_link spritegame spriteall">Close</span>
-        </a>
-    </li>
-    <li class="tab closeable" id="sticker_award_tab" style="display:none;">
-        <a href="#sticker_award_tab_pane" id="sticker_award" class="">
-          <span style="float: left">Award</span>
-          <span class="close_tab_link spritegame spriteall">Close</span>
-        </a>
-    </li>
-    <li class="tab closeable" id="share_tab" style="display:none;">
-        <a href="#share_tab_pane" id="share" class="">
-          <span style="float: left">Share</span>
-          <span class="close_tab_link spritegame spriteall">Close</span>
-        </a>
-    </li>
-    <li class="tab closeable" id="high_score_alert_tab" style="display:none;">
-        <a href="#high_score_alert_tab_pane" id="high_score" class="">
-          <span style="float: left">Award</span>
-          <span class="close_tab_link spritegame spriteall">Close</span>
-        </a>
-    </li>
-    <li class="tab closeable" id="shared_content_welcome_tab" style="display:none;">
-      <a href="#shared_content_welcome_tab_pane" id="shared_content_welcome" class="">
-        <span style="float: left">Shared</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="progress_tab" style="display:none;">
-      <a href="#progress_tab_pane" id="progress" class="">
-        <span style="float: left">Progress</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="progress_tab" style="display:none;">
-      <a href="#coupon_awards_tab_pane" id="coupon_awards_tab" class="">
-        <span style="float: left">Coupon</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="avatar_tab" style="display:none;">
-        <a href="#avatar_tab_pane" id="avatar" class="">
-          <span style="float: left">Alert</span>
-          <span class="close_tab_link spritegame spriteall">Close</span>
-        </a>
-    </li>
-    <li class="tab closeable" id="cloud_saves_tab" style="display:none;">
-      <a href="#cloud_saves_tab_pane" id="cloud_saves" class="">
-        <span style="float: left">Cloud Saves</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-    <li class="tab closeable" id="cart_discount_tab" style="display:none;">
-      <a href="#cart_discount_tab_pane" id="cart_discount" class="">
-        <span style="float: left">Award</span>
-        <span class="close_tab_link spritegame spriteall">Close</span>
-      </a>
-    </li>
-  </ul>
-
-  <div id="cart_discount_tab_pane" class="tabpane pan" style="display:none; height:509px">
-    <div class="remaining-time-outer">
-      <div class="remaining-time h6 pas">
-        <p id="discount_countdown" style="display:block">
-          <span>Limited Time Offer!</span>
-          <strong id="discount_hours_remaining"></strong>
-          <span>H:</span>
-          <strong id="discount_minutes_remaining"></strong>
-          <span>M:</span>
-          <strong id="discount_seconds_remaining"></strong>
-          <span>S</span>
-        </p>
-        <!-- If offer expired, show expiration copy instead of countdown -->
-        <p id="discount_expiration" style="display:none">Sorry, offer has expired.</p>
-      </div>
-    </div>
-    <div class="discount mvl">
-      <strong>Save</strong>
-      <span class="percentage">30<i>%</i></span>
-    </div>
-    <p class="h2">on your first Kreds purchase!</p>
-    <span id="discount_purchase" class="discount-button btn btn_launch mal pvm">Act Quick, Redeem Now!</span>
-    <p class="end-notes regtext mhm mts">
-      The 30% discount will be automatically applied to your purchase. This is a limited time offer that expires when the countdown timer above
-      reaches zero. Limit one discount per user.
-    </p>
-  </div>
-
-  <div id="more_games_tab_pane" class="tabpane" style="height: 509px; display: none;">
-    <div class="default_tab_pane_content">
-      <p class="h4">More Games loading!</p>
-      <span class="spinner spinner_big">loading</span>
-    </div>
-  </div>
-  <div id="cloud_saves_tab_pane" class="tabpane" style="display:none; height:509px">
-    
-  </div>
-
-  <div id="game_tab_pane" class="tabpane" style="height: 509px; display: none;"></div>
-  <!-- end of game_tab_pane -->
-
-  <div id="chat_tab_pane" class="tabpane" style="height: 509px; display: none;">
-    <div id="chat_default_content" class="default_tab_pane_content">
-      <p class="h4">Joining room</p>
-      <span class="spinner spinner_big">loading</span>
-    </div>
-    <div id="session_conflict_content_for_chat_tab" style="display:none;">
-    </div>
-    <!-- This template is extracted from the DOM and cloned for each room a user joins -->
-    <div class="chat_room_template" style="display:none;">
-      <div class="chat_tabpane users_in_room clear">
-        <div class="guest_count_holder user_row" style="display:none;">
-          <span class="guest_count_in_room spritegame"></span>
-        </div>
-      </div>
-      <div class="chat_tabpane friends_in_room"></div>
-      <div class="chat_message_window" style="height: 296px;">
-        <span class="history-button" style="display:none">Load older messages</span>
-        <span class="history-spinner spinner" style="display:none"></span>
-      </div>
-      <div class="chat_controls">
-        <div class="chat_text_controls">
-          <textarea class="chat_input prompt_text">Enter text for chat here</textarea>
-          <button class="chat-sticker-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" class="sticker-ico chat-sticker-btn__ico" viewBox="0 0 24.5 24.5">
-  <path class="sticker-ico__fill" d="M12.3 0L0 12.3C0 19 5.5 24.5 12.3 24.5S24.5 19 24.5 12.3 19 0 12.3 0z"></path>
-  <path class="sticker-ico__border" d="M12.3 0L0 12.3C0 19 5.5 24.5 12.3 24.5S24.5 19 24.5 12.3 19 0 12.3 0zm0 22.5c-5.2 0-9.6-4-10.2-9.2h3c4.5 0 8.2-3.7 8.2-8.2v-3c5.6.6 9.7 5.6 9.1 11.2-.5 5.2-4.9 9.2-10.1 9.2z"></path>
+<div class="nav-but-wrap">
+<div class="menu-icon hover-target">
+<span class="menu-icon__line menu-icon__line-left"></span>
+<span class="menu-icon__line"></span>
+<span class="menu-icon__line menu-icon__line-right"></span>
+</div>
+</div>
+</div>
+</header>
+<div class="nav">
+<div class="nav__content">
+<ul class="nav__list">
+<li class="nav__list-item"><a href="https://ubg100.github.io/" class="hover-target">home</a></li>
+<li class="nav__list-item"><a href="https://ubg100.github.io/games-list" class="hover-target">games list</a></li>
+<li class="nav__list-item"><a href="https://ubg100.github.io/faq" class="hover-target">faq</a></li>
+<li class="nav__list-item"><a href="#" class="hover-target"></a></li>
+</ul>
+</div>
+</div>
+	<div class="progress-wrap">
+<svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+<path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
 </svg>
+</div>
+	<div class="test">
+<section class="content">
+	<div><div id="971542060501934713" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div id="674164033572568842" align="inherit" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div><div id="370896482962142208" align="left" style="width: 100%; overflow-y: hidden;" class="wcustomhtml"><div><div id="673953926798312800" align="center" style="width: 100%; overflow-y: hidden;" class="wcustomhtml">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="slope/UnityLoader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+      var gameInstance = UnityLoader.instantiate("gameContainer", "slope/slope.json");
+    </script>
+    <div class="webgl-content">
+        <div id="gameContainer" style="width: 1012px; height: 650px; margin: 0px; padding: 0px; border: 0px; position: relative; background: rgb(35, 31, 32);"><canvas id="#canvas" style="cursor: default;" width="800" height="560"></canvas><div class="logo Dark" style="display: none;"></div><div class="progress Dark" style="display: none;"><div class="empty" style="width: 0%;"></div><div class="full" style="width: 100%;"></div></div></div>
+        <div class="footer">
+            <div class="webgl-logo"></div>
+            <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
+        </div>
+    </div>
+</div>
+</div>
 
-          </button>
-          <span class="chat_char_countdown">
-            <span class="chat_chars_remaining">250</span>/250
-          </span>
-        </div>
-        <div class="chat_sticker_controls" style="display:none;">
-          <div class="chat-sticker-tab" style="display:none;">
-            <ul class="chat-sticker-tab__shiny"></ul>
-            <ul class="chat-sticker-tab__normal"></ul>
-          </div>
-          <div class="chat-sticker-market-tab" style="display:none;">
-            <p>
-              You don’t have any stickers yet… but fret not!
-            </p>
-            <img alt="" class="mtm mrm" src="https://cdn3.kongcdn.com/compiled-assets/stickers/chat-tab-sticker-368ee5eab42aae8f4dc0e1dddee2fc083a1a774cfb14e6c97ec32f9a269c40b9.png">
-            <p class="mvm">
-              <strong>Head over to the Marketplace</strong> to start collecting some Stickers!
-            </p>
-            <a href="/stickers" class="btn btn_action" target="_blank">Get Stickers</a>
-          </div>
-          <div class="chat-sticker-nav">
-            <button class="chat-sticker-nav__txt" tabindex="-1">ABC</button>
-            <div role="tablist" aria-label="Stickers" class="chat-sticker-nav__btns"></div>
-            <button class="chat-sticker-nav__prev" tabindex="-1"></button>
-            <button class="chat-sticker-nav__next" tabindex="-1"></button>
-          </div>
-        </div>
+
+
+</div>
+			</div>
+		</div>
       </div>
 
-      <div class="guest_chat_controls" style="display:none;">
-        <a href="#" onclick="holodeck.showSignupTab(); return false;">Register</a> or <a href="#" onclick="active_user.activateInlineLogin(); return false;">Sign in</a> to <strong>chat now</strong>, earn points, level up and track your progress!
-      </div>
-      <div class="silenced_chat_controls" style="display:none;">
-        <span class="silence_duration"></span>.
-        Click <a target="_blank" href="/pages/silenced">here</a> to read about silences.
-      </div>
-      <div class="faye_disconnect_controls" style="display:none;">
-        You have been disconnected from guild chat.
-      </div>
-
-      <!-- chat error message templates -->
-      <div class="chat_error_message_templates" style="display:none">
-        <div class="error_msg_too_long error_msg">
-          Kongregate Notice: Part of your message was cut off because it exceeded the 250 character maximum.
-        </div>
-        <div class="error_msg_rate_limit error_msg">
-          Kongregate Notice: To prevent spamming, we've limited how fast you can submit messages. Please try again.
-        </div>
-        <div class="error_msg_upsell_premium error_msg">
-          Kongregate Notice: You can make your very own private chat room by <a class="premium_upsell clickable" href="#">joining Kong</a>. Now you know!
-        </div>
-        <div class="error_msg_sticker error_msg">
-          Kongregate Notice: Your sticker could not be sent. Please try again later.
-        </div>
-      </div>
-      <!-- end chat error message templates -->
-    </div>
-    <!-- End chat room template -->
-    <div id="chat_room_chooser" style="display: none; visibility: hidden;">
-      <div class="return_to_room"><a href="#">« Return to <span class="room_name"></span></a></div>
-      <h5 class="choose_room_text">Choose a room from the list below:</h5>
-      <div class="room_list_header">
-        <span class="room_name_header">Room Name</span>
-        <span class="room_users_count_header"># of Users</span>
-        <div class="clear"></div>
-      </div>
-      <div class="rooms_list" style="height:446px;">
-        <!-- This template is extracted and cloned for each group of rooms a user may choose from -->
-        <div class="joinable_rooms_group collapsible_panel" style="display:none;">
-          <p class="panel_handle spritegame closed_link"><a class="group_name" href="#"></a></p>
-          <div class="panel_body cntrToggle">
-            <ul class="rooms"></ul>
-          </div>
-        </div>
-        <div class="room_description_rollover_container spritesite" style="display: none;">
-          <div class="room_description_rollover spritesite">
-            <div class="room_description_rollover_inner">
-              <span class="room_description_rollover_content"></span>
-            </div>
-          </div>
-        </div>
-        <div id="js-guild-room-template" style="display:none">
-          <li class="guild room"><p class="js-name name"></p><div style="clear:both;"></div></li>
-        </div>
-        <!-- End chat rooms list template -->
-      </div>
-    </div>
-    <!-- template for user rollover -->
-    <div id="user_rollover_template" class="user_rollover_container spritesite" style="display:none;">
-      <div class="user_rollover spritesite">
-        <div class="user_rollover_inner">
-          <p class="rollover_game_link_holder">
-            playing: <a id="rollover_game_link" class="rollover_game_link" href="#"></a>
-          </p>
-          <p class="rollover_profile_link_holder">
-            <a id="rollover_profile_link" class="rollover_profile_link" href="#" target="_blank">View Profile</a>
-          </p>
-          <p id="add_as_friend_content" class="rollover_add_friend_link_holder media">
-            <span style="display: none;" id="add_as_friend_indicator" class="spinner rollover_loading imgMini">loading</span>
-            <a id="rollover_add_friend_link" class="rollover_add_friend_link bd" href="#">Add as friend</a>
-          </p>
-          <p class="rollover_private_message_link_holder">
-            <a id="rollover_private_message_link" class="rollover_private_message_link" href="#">Private message</a>
-          </p>
-          <p class="rollover_private_room_invite_link_holder">
-            <a id="rollover_private_room_invite_link" class="rollover_private_room_invite_link" href="#" title="Invite to Private Chat">
-              <span class="invite">Invite Private</span>
-              <span class="retry" style="display:none">Invited (retry)</span>
-            </a>
-          </p>
-          <p class="rollover_private_room_kick_link_holder">
-            <a id="rollover_private_room_kick_link" class="rollover_private_room_kick_link" href="#" title="Kick out of Private Chat">
-              <span class="invite">Remove User</span>
-            </a>
-          </p>
-          <p class="rollover_mute_link_holder media" id="rollover_mute_link_holder">
-            <span style="display: none;" id="muting_indicator" class="spinner rollover_loading imgMini">loading</span>
-            <a id="rollover_mute_link" class="rollover_mute_link bd" href="#">Mute</a>
-          </p>
-        </div>
-      </div><!-- /.user_rollover -->
-    </div>
-    <!-- end template for user rollover -->
-    <!-- user profile placeholder -->
-    <div id="user_mini_profile_container" style="display:none;">
-      <div class="return_to_room"><a href="#">« Return to <span class="room_name"></span></a></div>
-      <div id="user_mini_profile" style="height:485px">
-      </div>
-    </div>
-    <!-- friends online placeholder -->
-    <div id="friends_online_container" style="display:none;">
-      <div class="return_to_room"><a href="#">« Return to <span class="room_name"></span></a></div>
-      <div id="friends_online" style="height:485px">
-      </div>
-    </div>
-    <!-- room info placeholder -->
-    <div id="room_info_container" style="display:none;">
-      <div class="return_to_room"><a href="#">« Return to <span class="room_name"></span></a></div>
-      <div id="room_info" class="cntrToggle pan mtm" style="height:485px">
-      </div>
-    </div>
-
-    <div id="chat_window_spinner" style="display:none">
-      <span class="spinner spinner_big">loading</span>
-    </div>
-
-    <div id="chat_window" style="">
-      <div id="chat_window_header" style="display:none">
-        <div class="room_name_container h6_alt mbs">Room: <span class="room_name h6 truncate_one_line"></span> (<span class="number_in_room"></span>)</div>
-        <div id="chat_room_tabs">
-          <div id="chat_room_tab" class="chat_room_tab"><a href="#">Room<span class="unread_chat_messages spriteall spritegame" style="display:none">Unread</span></a></div>
-          <div id="private_room_tab" class="chat_room_tab" style="display:none"><a href="#">Private<span class="unread_chat_messages spriteall spritegame" style="display:none">Unread</span></a></div>
-          <div id="game_room_tab" class="chat_room_tab" style="display:none"><a href="#">Game<span class="unread_chat_messages spriteall spritegame" style="display:none">Unread</span></a></div>
-          <div id="guild_room_tab" class="chat_room_tab" style="display:none"><a href="#">Guild<span class="unread_chat_messages spriteall spritegame" style="display:none">Unread</span></a></div>
-        </div>
-        <div id="chat_actions_container" class="chat_actions_container">
-        </div>
-
-      </div>
-      <div id="chat_rooms_container"></div>
-    </div>
-
-  </div>
-
-
-  <div id="signup_tab_pane" class="tabpane" style="height: 509px; overflow: hidden auto;">
-                        <div id="signup_tab_form" class="signup_tab_form hasLayout">
-                          <div id="facebook-connect-wrapper" style="display: none;">
-  <h3 class="fb_signup_title sprite_facebook h2 mts mbm">Welcome to Kongregate</h3>
-<p class="mts mbm">Register now to save your earned badges, chat with other players, and share your progress with your friends.</p>
-<div class="cntrToggle pam fb_signup_cta">
-  <h4 class="h2 mvm fb_signup_header sprite_facebook"><span class="fb_signup_header_text"><span class="sprite_facebook fb_signup_header_icon"></span>Sign up now:</span></h4>
-  <a title="Sign in with Facebook" class="facebook_signin_large sprite_facebook mvl" onclick="new FacebookAuthenticator({}); return false;" href="#">Connect with Facebook</a>
-  <iframe id="facebook-facepile" src="//www.facebook.com/plugins/facepile.php?action&amp;size=medium&amp;max_rows=1&amp;width=249&amp;colorscheme=light&amp;app_id=218282488189771" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:264px;" allowtransparency="true"></iframe>
-  <p class="mts mbl">or <a id="email-signup-link" href="#">Sign Up with Email</a></p>
-</div>
-
-</div>
-<div id="normal-registration-wrapper">
-  <h3 class="spritegame">Become a <strong>Kongregate member for free!</strong></h3>
-  <p class="mts mbm">
-    Sign up now to save your badges, points and progress. You'll also be eligible for free video games and prizes!!!
-    <em>(<a href="#" onclick="active_user.activateInlineLogin(); return false;">Already a member?</a>)</em>
-  </p>
-  <p class="signup_tab_form_submit_error mbs ctnr ctnrError" id="submit_error_message" style="display: none;">
-    We encountered a problem. Please try again.
-  </p>
-  <div class="cntrToggle baseform">
-    <form id="registration_form" onsubmit="if(window.DynamicFrameTarget){ new DynamicFrameTarget({form: this, callback: function(response) { if (response.success) { user_status.accountCreationSuccess(response) } else { user_status.accountCreationFailure(response)  } }});}" class="new_user" action="https://www.kongregate.com/accounts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="Qh2PN87yhaLY9Pf64JPFPGtilDH0pKOKgfZdygJ0kJKB9nppe6zbqux3kAbPYAEAcSM5fBbtZXoyAyRZYIuUPA==">
-    
-
-<input type="hidden" name="game_id" id="game_id" value="316009">
-
-
-<input type="hidden" name="user[age_concern]" id="user_age_concern" value="" class="registration_age_concern">
-
-<div class="cntrError mam pam" id="registration_form_base_errors" style="display: none;"></div>
-<div class="email_field form_block">
-  <div class="form_block" id="registration_form_email_address_block">
-  <div class="label_block" id="registration_form_email_address_label_block">
-    <label id="registration_form_email_address_label" for="registration_form_email_address">Email Address</label>
-  </div>
-  <div id="registration_form_email_address_control_block" class="input_block"><input id="registration_form_email_address" type="text" name="user[email_address]"></div>
-  <div class="error_block error" id="registration_form_email_address_error_block">
-    
-  </div>
-</div>
-
-  <div id="registration_form_opt_in_block" class="checkbox">
-  <div class="control_block" id="registration_form_opt_in_control_block">
-    <input name="user[opt_in]" type="hidden" value="0"><input id="registration_form_opt_in" tabindex="-1" class="check_box mts opt-in-chk" type="checkbox" value="1" checked="checked" name="user[opt_in]">
-    <label id="registration_form_opt_in_label" class="check_box_label" for="registration_form_opt_in">Send me updates</label>
-  </div>
-  <div class="error_block error" id="registration_form_opt_in_error_block">
-  </div>
-</div>
-
-</div>
-<div class="form_block" id="registration_form_password_block">
-  <div class="label_block" id="registration_form_password_label_block">
-    <label id="registration_form_password_label" for="registration_form_password">Password</label>
-    <em id="registration_form_password_explanation_block">(min. 10 characters)</em>
-  </div>
-  <div id="registration_form_password_control_block" class="input_block"><input id="registration_form_password" type="password" name="user[password]"></div>
-  <div class="error_block error" id="registration_form_password_error_block">
-    
-  </div>
-</div>
-
-<div class="form_block" id="registration_form_birth_date_block">
-  <div class="label_block" id="registration_form_birth_date_label_block">
-    <label id="registration_form_birth_date_label" for="registration_form_birth_date">When were you born?</label>
-  </div>
-  <div id="registration_form_birth_date_control_block" class="input_block">
-
-<select name="user[birth_date(1i)]" class="registration_form_date_select">
-<option value=""></option>
-<option value="1940">1940</option>
-<option value="1941">1941</option>
-<option value="1942">1942</option>
-<option value="1943">1943</option>
-<option value="1944">1944</option>
-<option value="1945">1945</option>
-<option value="1946">1946</option>
-<option value="1947">1947</option>
-<option value="1948">1948</option>
-<option value="1949">1949</option>
-<option value="1950">1950</option>
-<option value="1951">1951</option>
-<option value="1952">1952</option>
-<option value="1953">1953</option>
-<option value="1954">1954</option>
-<option value="1955">1955</option>
-<option value="1956">1956</option>
-<option value="1957">1957</option>
-<option value="1958">1958</option>
-<option value="1959">1959</option>
-<option value="1960">1960</option>
-<option value="1961">1961</option>
-<option value="1962">1962</option>
-<option value="1963">1963</option>
-<option value="1964">1964</option>
-<option value="1965">1965</option>
-<option value="1966">1966</option>
-<option value="1967">1967</option>
-<option value="1968">1968</option>
-<option value="1969">1969</option>
-<option value="1970">1970</option>
-<option value="1971">1971</option>
-<option value="1972">1972</option>
-<option value="1973">1973</option>
-<option value="1974">1974</option>
-<option value="1975">1975</option>
-<option value="1976">1976</option>
-<option value="1977">1977</option>
-<option value="1978">1978</option>
-<option value="1979">1979</option>
-<option value="1980">1980</option>
-<option value="1981">1981</option>
-<option value="1982">1982</option>
-<option value="1983">1983</option>
-<option value="1984">1984</option>
-<option value="1985">1985</option>
-<option value="1986">1986</option>
-<option value="1987">1987</option>
-<option value="1988">1988</option>
-<option value="1989">1989</option>
-<option value="1990">1990</option>
-<option value="1991">1991</option>
-<option value="1992">1992</option>
-<option value="1993">1993</option>
-<option value="1994">1994</option>
-<option value="1995">1995</option>
-<option value="1996">1996</option>
-<option value="1997">1997</option>
-<option value="1998">1998</option>
-<option value="1999">1999</option>
-<option value="2000">2000</option>
-<option value="2001">2001</option>
-<option value="2002">2002</option>
-<option value="2003">2003</option>
-<option value="2004">2004</option>
-<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>
-</select><select name="user[birth_date(2i)]" class="registration_form_date_select" disabled="" style="display: none;">
-<option value=""></option>
-<option value="1">January</option>
-<option value="2">February</option>
-<option value="3">March</option>
-<option value="4">April</option>
-<option value="5">May</option>
-<option value="6">June</option>
-<option value="7">July</option>
-<option value="8">August</option>
-<option value="9">September</option>
-<option value="10">October</option>
-<option value="11">November</option>
-<option value="12">December</option>
-</select><select name="user[birth_date(3i)]" class="registration_form_date_select" disabled="" style="display: none;">
-<option value=""></option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-</select>
-</div>
-  <div class="error_block error" id="registration_form_birth_date_error_block">
-    
-  </div>
-</div>
-
-<div class="form_block" id="registration_form_username_block">
-  <div class="label_block" id="registration_form_username_label_block">
-    <label id="registration_form_username_label" for="registration_form_username">Username</label>
-    <em id="registration_form_username_explanation_block">(4-16 characters)</em>
-  </div>
-  <div id="registration_form_username_control_block" class="input_block"><input id="registration_form_username" type="text" name="user[username]"></div>
-  <div class="error_block error" id="registration_form_username_error_block">
-    
-  </div>
-</div>
-
-<div class="form_block regtext privacy_form_block checkbox-grp" style="display: none;">
-  <div id="registration_form_privacy_policy_consent_block" class="checkbox">
-  <div class="control_block" id="registration_form_privacy_policy_consent_control_block">
-    <input name="user[privacy_policy_consent]" type="hidden" value="0"><input id="registration_form_privacy_policy_consent" class="check_box privacy_policy_checkbox" type="checkbox" value="1" name="user[privacy_policy_consent]">
-    <label id="registration_form_privacy_policy_consent_label" class="check_box_label" for="registration_form_privacy_policy_consent">I have read and agree to the <a onclick="window.open(this.href);return false;" href="/privacy">Privacy Policy</a>, <a onclick="window.open(this.href);return false;" href="/user-agreement">User Agreement</a> and <a onclick="window.open(this.href);return false;" href="/cookie-policy">Cookie Policy</a></label>
-  </div>
-  <div class="error_block error" id="registration_form_privacy_policy_consent_error_block">
-  </div>
-</div>
-
-</div>
-<div class="form_block regtext parental_consent_form_block" style="display: none;">
-  <div class="form_block" id="registration_form_parent_email_block">
-  <div class="label_block" id="registration_form_parent_email_label_block">
-    <label id="registration_form_parent_email_label" for="registration_form_parent_email">Parent or guardian email address</label>
-    <em id="registration_form_parent_email_explanation_block">Your parent or guardian must review and agree on your behalf to register</em>
-  </div>
-  <div id="registration_form_parent_email_control_block" class="input_block"><input id="registration_form_parent_email" class="parent_email" type="text" name="user[parent_email]"></div>
-  <div class="error_block error" id="registration_form_parent_email_error_block">
-    
-  </div>
-</div>
-
-</div>
-
-    <input type="hidden" name="recaptcha_token" class="recaptcha_token_field">
-    <div class="submit_button form_block">
-      <p class="cta-outer">
-        <input type="submit" value="Create My Account" id="registration_form_submit_button" class="btn btn_action" onclick="try{}catch(e){};if(!this.elem_registration_form_submit_button){this.elem_registration_form_submit_button=$('registration_form_submit_button');this.spin_registration_form_submit_button=$('registration_form_submit_button_spinner');this.restore=function(t){return function(){t.elem_registration_form_submit_button.show();t.spin_registration_form_submit_button.hide();Event.stopObserving(window, 'unload', t.restore);}}(this);}this.elem_registration_form_submit_button.hide();this.spin_registration_form_submit_button.show();Event.observe(window, 'unload', this.restore);" data-disable-with="Create My Account"><span id="registration_form_submit_button_spinner" class="spinner" style="display:none" title="loading…">&ZeroWidthSpace;</span>
-      </p>
-    </div>
-    <div class="g-recaptcha" id="grecaptcha-target" data-sitekey="6LdzZjQUAAAAANyruFjOROmzLKQofUeJA5sIaPf3" data-size="invisible"><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s ease 0s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdzZjQUAAAAANyruFjOROmzLKQofUeJA5sIaPf3&amp;co=aHR0cHM6Ly93d3cua29uZ3JlZ2F0ZS5jb206NDQz&amp;hl=en&amp;v=yZguKF1TiDm6F3yJWVhmOKQ9&amp;size=invisible&amp;cb=80bkdadtc4o5" width="256" height="60" role="presentation" name="a-5m25xojks6g7" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
-</form>
-
-  </div>
-</div>
-
-
-                        </div>
-                      </div>
-
-  <div id="signin_tab_pane" class="tabpane" style="display:none; height:509px; overflow-y:auto; overflow-x:hidden;">
-    <div id="new_session_form" class="mts mbm">
-  <h3>Sign in to your account</h3>
-  <form onsubmit="if(window.DynamicFrameTarget){ new DynamicFrameTarget({form: this, callback: user_status.sessionStatus});}" action="https://www.kongregate.com/session" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3n5+IdjQGrYxxmOm3mvixXGiWNNXP4M2a3bG3Ko4PAkdlYt/bY5EvgVFBFrxmCb5a+P1nrV2RcbYg79PyMc4pw==">
-    <input type="hidden" name="game_id" id="game_id" value="316009">
-    <dl class="clearfix">
-    <dt><label for="username">Username or Email</label></dt>
-    <dd><input type="text" name="username" id="username" title="username"></dd>
-    <dt>
-      <label for="password">Password</label>
-          (<a tabindex="1" href="#" onclick="active_user.activateInlineLogin({ recover: true}); return false;">Forgot your password?</a>)
-    </dt>
-    <dd><input type="password" name="password" id="password" title="password"></dd>
-<dt id="signin">
-    <!--[if lte IE 7]><span class="inlinefix">.</span><![endif]-->
-    <input type="submit" value="Sign in" class="btn btn_wide btn_action" id="sessions_new_form_spinner" onclick="try{}catch(e){};if(!this.elem_sessions_new_form_spinner){this.elem_sessions_new_form_spinner=$('sessions_new_form_spinner');this.spin_sessions_new_form_spinner=$('sessions_new_form_spinner_spinner');this.restore=function(t){return function(){t.elem_sessions_new_form_spinner.show();t.spin_sessions_new_form_spinner.hide();Event.stopObserving(window, 'unload', t.restore);}}(this);}this.elem_sessions_new_form_spinner.hide();this.spin_sessions_new_form_spinner.show();Event.observe(window, 'unload', this.restore);" data-disable-with="Sign in"><span id="sessions_new_form_spinner_spinner" class="spinner" style="display:none" title="loading…">&ZeroWidthSpace;</span>
-</dt>
-<dt id="remember"><input type="checkbox" name="remember_me" id="remember_me" value="true" checked="checked">&nbsp;<label for="remember_me" id="remember_label">Remember me</label></dt>
-</dl>
-
-</form></div>
-<div id="recovery_token_success" style="display:none;">
-  <button class="submission_button" onclick="holodeck.closeSigninTab();">Close</button>
-</div>
-<p class="reg_prompt">
-  <em>Not a member yet? <a href="#" onclick="holodeck.closeSigninTab(); holodeck.showSignupTab(); return false;">Join for free!</a></em>
-  <a href="#" class="fb_btn facebook_signin_medium sprite_facebook" onclick="new FacebookAuthenticator({}); return false;" title="Sign in with Facebook">Sign in</a>
-</p>
-
-  </div>
-
-  <div id="rate_this_game_tab_pane" class="tabpane" style="display:none; height:509px; overflow-y:auto; overflow-x:hidden;">
-    <div id="rate_this_game_tab_pane_content">
-      <div class="rate_widget cntr cntrBanner">
-  <h2>Enjoying this game?</h2>
-  <p class="regtext mts">
-    <strong class="bright">Rate Retro Bowl</strong> to receive better game recommendations
-  </p>
-  <div class="rateable_stars"><p class="game_rating rating_lrg"><span class="rating_unit js-rating-unit" data-skip-rating-hover="yes" data-game-id="316009" data-game-rating="0">
-  <span class="star_group rating_btns js-star-group" style="width: 0%;">
-    <span class="rating_star kong_ico js-star" title="Hated it" data-rating="1">*</span><span class="rating_star kong_ico js-star" title="Didn't like it" data-rating="2">*</span><span class="rating_star kong_ico js-star" title="Liked it" data-rating="3">*</span><span class="rating_star kong_ico js-star" title="Really liked it" data-rating="4">*</span><span class="rating_star kong_ico js-star" title="Loved it" data-rating="5">*</span>
-  </span>
-  <span class="star_group rating_range">
-    <span class="rating_star kong_ico js-star" data-rating="1">*</span><span class="rating_star kong_ico js-star" data-rating="2">*</span><span class="rating_star kong_ico js-star" data-rating="3">*</span><span class="rating_star kong_ico js-star" data-rating="4">*</span><span class="rating_star kong_ico js-star" data-rating="5">*</span>
-  </span>
-  <span class="star_rating_text">4.58151/5 rating</span>
-  <span class="game_rating_footnote predicted man">Our predicted rating for you</span>
-  <span class="game_rating_footnote rated man">Your rating</span>
-</span>
-
-</p></div>
-    <em class="js-unrated"><a href="#" class="rate_later_link">I'll rate it later</a></em>
-  <p class="js-rated" style="display:none;">Thanks for your rating!</p>
-
-  <div id="opt_out" style="display:none;" class="mts">
-    <input type="checkbox" id="rate_game_opt_out">
-    <label for="rate_game_opt_out">
-      Don't ask me to rate games in the future
-    </label>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-  <div id="alert_tab_pane" class="tabpane" style="display:none; height:509px">
-    <div id="alert_tab_pane_content"></div>
-  </div>
-  <div id="accomplishment_awarded_tab_pane" class="holodeck_award_outer tabpane" style="display:none; height:509px">
-    <div id="accomplishment_awarded_tab_pane_content"></div>
-  </div>
-  <div id="accomplishment_group_awarded_tab_pane" class="holodeck_award_outer tabpane" style="display:none; height:509px">
-    <div id="accomplishment_group_awarded_tab_pane_content"></div>
-  </div>
-  <div id="share_tab_pane" class="tabpane" style="display:none; height:509px">
-    <div id="share_tab_pane_content">
-      <div class="share_header media mbm">
-  <h4 class="mbs">
-    Earn points when you share <em>Retro Bowl</em></h4>
-  <span class="spritegame imgMini share_header_icon"></span>
-  <p class="bd">You'll get 15 points for each user that signs up through the share tools below, and a bonus every time they level up.</p>
-</div>
-
-<div class="share_post_link clear">
-  <h5>Post a game link on your favorite website</h5>
-  <div class="social_share_links cntrToggle media">
-    <ul class="unit size1of2">
-      <li class="share_facebook spritegame"><a title="Share on Facebook" onclick="metricTracker.trackPageView('/share/facebook');window.open('http://www.facebook.com/sharer.php?u=' + encodeURIComponent(active_user.referrerUrl(&quot;https://www.kongregate.com/games/siread/retro-bowl?sfa=facebook&quot;)) + '&amp;t='+encodeURIComponent(&quot;Play Retro Bowl on Kongregate&quot;),'sharer','toolbar=0,status=0,width=626,height=436'); return false;" href="http://www.facebook.com/share.php?u=https://www.kongregate.com/games/siread/retro-bowl?sfa=facebook">Facebook</a></li>
-      <li class="share_myspace spritegame"><form id="myspacepostto551629" target="_blank" action="https://www.myspace.com/index.cfm?fuseaction=postto" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3n5+IdjQGrYxxmOm3mvixXGiWNNXP4M2a3bG3Ko4PAkdlYt/bY5EvgVFBFrxmCb5a+P1nrV2RcbYg79PyMc4pw=="><input type="hidden" name="t" id="t" value="Play Retro Bowl on Kongregate"><input type="hidden" name="c" id="c" value="&amp;lt;p&amp;gt;I just played Retro Bowl on Kongregate.&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;img class=&amp;quot;game_icon&amp;quot; title=&amp;quot;Retro Bowl&amp;quot; alt=&amp;quot;Play Retro Bowl&amp;quot; width=&amp;quot;93&amp;quot; height=&amp;quot;74&amp;quot; src=&amp;quot;https://cdn1.kongcdn.com/game_icons/0069/4343/icon_200.png?i10c=img.resize(width:250)&amp;quot; /&amp;gt;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;Retro Bowl is the perfect game for the armchair quarterback to finally prove a point. Presented in a glorious retro style, the game has simple roster management, including press duties and the handling of fragile egos, while on the field you get to call the shots. Can you pass the grade and take your team all the way to the ultimate prize? Can you win the Retro Bowl?&amp;lt;/p&amp;gt;"><input type="hidden" name="u" id="myspacepostto551629_url" value=""><input type="hidden" name="l" id="l" value="1"><a onclick="metricTracker.trackPageView('/share/myspace');;$('myspacepostto551629_url').value=active_user.referrerUrl(&quot;https://www.kongregate.com/games/siread/retro-bowl?sfa=myspace&quot;);$('myspacepostto551629').submit();return false;" href="#">MySpace</a></form></li>
-      <li class="share_stumbleupon spritegame"><a title="Share on Stumbleupon" onclick="metricTracker.trackPageView('/share/stumble');window.open('http://www.stumbleupon.com/submit?title=Retro+Bowl&amp;url=' + encodeURIComponent(active_user.referrerUrl(&quot;https://www.kongregate.com/games/siread/retro-bowl?sfa=stumbleupon&quot;))); return false;" href="http://www.stumbleupon.com/submit?title=Retro+Bowl&amp;url=https%3A%2F%2Fwww.kongregate.com%2Fgames%2Fsiread%2Fretro-bowl%3Fsfa%3Dstumbleupon">StumbleUpon</a></li>
-    </ul>
-    <ul class="unit size1of2 lastUnit">
-      <li class="share_twitter spritegame"><a title="Tweet it" onclick="metricTracker.trackPageView('/share/twitter');window.open('http://twitter.com/home?status=' + encodeURIComponent(active_user.referrerUrl(&quot;https://www.kongregate.com/games/siread/retro-bowl?sfa=twitter&quot;) + ' - cool game on Kongregate')); return false;" href="http://twitter.com/home?status=cool+game+on+Kongregate">Twitter</a></li>
-      <li class="share_digg spritegame"><a title="Digg This!" onclick="metricTracker.trackPageView('/share/digg');window.open('http://digg.com/submit?phase=2&amp;url=' + encodeURIComponent(active_user.referrerUrl(&quot;https://www.kongregate.com/games/siread/retro-bowl?sfa=digg&quot;)) + '&amp;title=Retro+Bowl&amp;bodytext=Retro+Bowl+is+the+perfect+game+for+the+armchair+quarterback+to+finally+prove+a+point.+Presented+in+a+glorious+retro+style%2C+the+game+has+simple+roster+management%2C+including+press+duties+and+the+handling+of+fragile+egos%2C+while+on+the+field+you+get+to+call+the+shots.+Can+you+pass+the+grade+and+take+your+team+all+the+way+to+the+ultimate+prize%3F+Can+you+win+the+Retro+Bowl%3F&amp;topic=playable_web_games'); return false;" href="http://digg.com/submit?phase=2&amp;url=https://www.kongregate.com/games/siread/retro-bowl?sfa=digg&amp;title=Retro+Bowl&amp;bodytext=Retro+Bowl+is+the+perfect+game+for+the+armchair+quarterback+to+finally+prove+a+point.+Presented+in+a+glorious+retro+style%2C+the+game+has+simple+roster+management%2C+including+press+duties+and+the+handling+of+fragile+egos%2C+while+on+the+field+you+get+to+call+the+shots.+Can+you+pass+the+grade+and+take+your+team+all+the+way+to+the+ultimate+prize%3F+Can+you+win+the+Retro+Bowl%3F&amp;topic=playable_web_games">Digg</a></li>
-      <li class="share_reddit spritegame"><a title="Post to reddit" onclick="metricTracker.trackPageView('/share/reddit');window.open('http://www.reddit.com/r/gaming/submit?title=Play+Retro+Bowl+on+Kongregate&amp;url=' + encodeURIComponent(active_user.referrerUrl(&quot;https://www.kongregate.com/games/siread/retro-bowl?sfa=reddit&quot;))); return false;" href="http://www.reddit.com/r/gaming/submit?url=https%3A%2F%2Fwww.kongregate.com%2Fgames%2Fsiread%2Fretro-bowl%3Fsfa%3Dreddit">Reddit</a></li>
-    </ul>
-    <p class="mts"><em>Game URL with referral code</em></p>
-    <input type="text" name="game_url" id="share_tab_pane_game_url" value="https://www.kongregate.com/games/siread/retro-bowl?sfa=permalink" class="game_url spritegame pll">
-  </div>
-</div>
-
-<div id="share_email_invitation_container">
-  <div class="share_email_invitation mtm">
-    <h5>Email an Invitation to play this game</h5>
-    <div class="email_invitation_contents cntrToggle">
-      <a class="import_contacts spritegame mbs" href="#" onclick="activateCloudspongeChooser('share_email_invitation_recipients');; return false;">Import contacts from Yahoo/Gmail/Hotmail</a>
-      <div id="share_email_invitation_confirmation"></div>
-      <form class="new_plug" id="new_plug" onsubmit="new Ajax.Request('/plugs.chat', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;" action="/plugs.chat" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="3n5+IdjQGrYxxmOm3mvixXGiWNNXP4M2a3bG3Ko4PAkdlYt/bY5EvgVFBFrxmCb5a+P1nrV2RcbYg79PyMc4pw==">
-        <div class="recipients">
-          <label for="share_email_invitation_recipients">To</label>
-          <input class="hintable recipients_field" id="share_email_invitation_recipients" title="eg, bob@123.com, jan@abc.com" type="text" name="plug[email_addresses]">
-        </div>
-        <div class="email">
-          <label for="plug_sender_email">From</label>
-          <input class="hintable email_field" title="Enter your email address" type="text" name="plug[sender_name_or_email]" id="plug_sender_name_or_email">
-        </div>
-        <div class="personal_message clear">
-          <label for="plug_message">Message</label>
-          <textarea name="plug[message]" id="plug_message"></textarea>
-        </div>
-        <input value="316009" type="hidden" name="plug[game_id]" id="plug_game_id">
-        <input type="submit" value="Send" class="btn btn_wide btn_action" id="share_email_invitation_submit" onclick="try{$('share_email_invitation_confirmation').update('');}catch(e){};if(!this.elem_share_email_invitation_submit){this.elem_share_email_invitation_submit=$('share_email_invitation_submit');this.spin_share_email_invitation_submit=$('share_email_invitation_submit_spinner');this.restore=function(t){return function(){t.elem_share_email_invitation_submit.show();t.spin_share_email_invitation_submit.hide();Event.stopObserving(window, 'unload', t.restore);}}(this);}this.elem_share_email_invitation_submit.hide();this.spin_share_email_invitation_submit.show();Event.observe(window, 'unload', this.restore);" data-disable-with="Send"><span id="share_email_invitation_submit_spinner" class="spinner" style="display:none" title="loading…">&ZeroWidthSpace;</span>
-        <div class="clear"></div>
-</form>    </div>
-  </div>
-</div>
-
-
-    </div>
-  </div>
-  <div id="high_score_alert_tab_pane" class="holodeck_award_outer tabpane" style="display:none; height:509px">
-    <div id="high_score_alert_tab_pane_content">
-      <div class="hololevel_outer award_banner ptl">
-  <div class="award_feature">
-    <h4 class="award_title high_award_title pbm">Congratulations <span id="high_score_alert_username"></span>!</h4>
-    <p class="regtextLrg high_score_intro mbm"><strong>You set a high score in</strong> Retro Bowl</p>
-    <div class="regtext high_score_summary">
-    </div>
-  </div>
-</div>
-
-    </div>
-  </div>
-
-  <div id="shared_content_welcome_tab_pane" class="tabpane" style="display:none; height:509px">
-    <div id="shared_content_welcome_tab_pane_content">
-
-    </div>
-  </div>
-
-  <div id="progress_tab_pane" class="holodeck_award_outer tabpane" style="display:none; height:509px">
-    <div id="progress_tab_pane_content">
-    </div>
-  </div>
-
-  <div id="coupon_awards_tab_pane" class="holodeck_award_outer tabpane" style="display:none; height:509px">
-    <div id="coupon_challenges_tab_pane_content">
-      
-    </div>
-  </div>
-
-  <div id="sticker_award_tab_pane" class="holodeck_award_outer tabpane" style="display:none; height:509px">
-  </div>
-
-
-  <div id="avatar_tab_pane" class="tabpane" style="display:none; height:509px">
-    <div id="avatar_tab_pane_content" class="contents_inner">
-      <div id="avatar_prompt_content">
-        <h3>Retro Bowl has sent a replacement avatar.</h3>
-        <div class="game_avatar_image">
-          <img id="game_supplied_avatar_image_tag" alt="avatar from Retro Bowl" style="max-height: 389px; max-width: 100%" src="https://cdn1.kongcdn.com/images/blank.gif">
-        </div>
-
-        <div id="avatar_controls" class="avatar_controls" style="display:none;">
-          <p>Would you like to use this image as your Kongregate avatar?</p>
-          <a id="game_avatar_accept_button" href="#" onclick="holodeck.saveAvatar(); return false;">Change Avatar</a>
-          <span id="avatar_update_spinner" class="spinner avatar_update_spinner" style="display:none" title="loading…">&ZeroWidthSpace;</span>
-          <a id="game_avatar_cancel_link" href="#" onclick="holodeck.cancelAvatar(); return false;">No Thanks</a>
-        </div>
-        <div id="avatar_controls_guest" class="avatar_controls_guest">
-          <a href="#" onclick="holodeck.showSignupTab(); return false;">Register</a> or <a href="#" onclick="active_user.activateInlineLogin(); return false;">Sign in</a> to save this avatar.
-        </div>
-      </div>
-      <div id="avatar_save_results"></div>
-    </div>
-  </div>
-
-<!-- alert tab contents -->
-<div id="disconnected_alert" class="disconnect_tab" style="display:none;">
-  <h4 class="h4 mbs">You have been disconnected from Kongregate's chat &amp; score submission servers.</h4>
-  <div class="disconnect_content cntr cntrToggle">
-    <div class="media">
-      <span class="disconnect_intro spritegame spriteall img mts"></span>
-      <p class="bd">Check the hints below to get connected with the community and track achievements in thousands of games.</p>
-    </div>
-    <p class="clear mvs">
-      <strong class="h5">Check your connection</strong>
-      Please check your internet connection and refresh the page if chat does not reconnect on its own. Note that you may lose unsaved game progress if you refresh the page.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Try again in a few minutes</strong>
-      Sometimes the internet is just not happy. We might have restarted our chat server, or there might be a temporary problem that will resolve itself soon. You can try refreshing the page in a couple minutes - or <a onclick="window.open(this.href);return false;" href="/feedbacks/new">contact our support team</a> for more help if the problem continues.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Did you lose an achievement?</strong>
-      Take a screenshot first and <a onclick="window.open(this.href);return false;" href="/feedbacks/new?game_id=316009&amp;type=MissingAccomplishmentFeedback">report the missing achievement</a>.
-    </p>
-    <div class="disconnected_spinner"><span class="spinner spinner_big">loading</span></div>
-  </div>
-</div>
-
-<div id="session_conflict_alert" style="display:none;">
-  <h4 class="h4 mbs">You have been disconnected from Kongregate's chat &amp; score submission servers due to a session conflict.</h4>
-  <div class="disconnect_content cntr cntrToggle">
-    <div class="media">
-      <span class="disconnect_intro spritegame spriteall img mts"></span>
-      <p class="bd">Check the hints below to get connected with the community and save your progress in thousands of games.</p>
-    </div>
-    <p class="mvs">
-      <strong class="h5">Are you logged into Kongregate in another tab or window?</strong>
-      Kongregate only allows one chat connection per user. Please close other tabs and windows where you are logged in, then hit the 'reconnect' button below.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Did you lose an achievement?</strong>
-      Take a screenshot first and <a onclick="window.open(this.href);return false;" href="/feedbacks/new?game_id=316009&amp;type=MissingAccomplishmentFeedback">report the missing achievement</a>.
-    </p>
-    <div class="reconnect_button mvm">
-      <input type="button" value="RECONNECT ME" onclick="$(this).hide(); $(this).next().show(); holodeck.reconnect();" class="btn btn_wide btn_action">
-      <div class="disconnected_spinner" id="session_conflict_reconnect_spinner" style="display:none;"><span class="spinner spinner_big">loading</span></div>
-    </div>
-  </div>
-</div>
-
-<div id="session_expired_alert" style="display:none;">
-
-
-  <h4 class="h4 mbs">To reconnect to chat or submit statistics, you must refresh your page.</h4>
-  <div class="disconnect_content cntr cntrToggle">
-    <div class="media">
-      <span class="disconnect_intro spritegame spriteall img mts"></span>
-      <p class="bd">Check the hints below to get connected with the community and save your progress in thousands of games.</p>
-    </div>
-    <p class="mvs">
-      <strong class="h5">Did you log into Kongregate in another browser?</strong>
-      That would make the session in this browser stale.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Did you lose an achievement?</strong>
-      Take a screenshot first and <a onclick="window.open(this.href);return false;" href="/feedbacks/new?game_id=316009&amp;type=MissingAccomplishmentFeedback">report the missing achievement</a>.
-    </p>
-  </div>
-</div>
-
-
-<div id="cannot_connect_alert" style="display:none;">
-  <h4 class="h4 mbs">You are not yet connected to Kongregate's chat &amp; score submission servers.</h4>
-  <div class="disconnect_content cntr cntrToggle">
-    <div class="media">
-      <span class="disconnect_intro spritegame spriteall img mts"></span>
-      <p class="bd">Check the hints below to get connected with the community and track achievements in thousands of games.</p>
-    </div>
-    <p class="mvs">
-      <strong class="h5">Check your security settings</strong>
-      Connection issues are typically caused by security settings on your network or computer. Check that your firewall or router has port 5222 open and allowing traffic.  If you are on a school or office network, you may need to contact your network administrator to make the necessary changes.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Is your version of Flash current?</strong>
-      Some old versions of Flash don't work well with our new chat application. You can go to <a onclick="window.open(this.href);return false;" href="http://get.adobe.com/flashplayer/">http://get.adobe.com/flashplayer/</a> to get the newest version.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Ad blockers and browser plug ins</strong>
-      Ad blocker programs like AdBlock Plus, proxy software and a variety of other browser add-ons can prevent users from connecting to chat. Please try disabling any third party browser plugins you have have, then refresh the page.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Try again in a few minutes</strong>
-      Sometimes the internet is just not happy. We might have restarted our chat server, or there might be a temporary problem that will resolve itself soon. You can try refreshing the page in a couple minutes - or <a onclick="window.open(this.href);return false;" href="/feedbacks/new">contact our support team</a> for more help if the problem continues.
-    </p>
-    <p class="mvs">
-      <strong class="h5">Did you lose an achievement?</strong>
-      Take a screenshot first and <a onclick="window.open(this.href);return false;" href="/feedbacks/new?game_id=316009&amp;type=MissingAccomplishmentFeedback">report the missing achievement</a>.
-    </p>
-    <div class="disconnected_spinner"><span class="spinner spinner_big">loading</span></div>
-  </div>
-</div>
-
-</div><!-- kong_game_ui -->
-
-<div class="accomplishment_notifications" style="display:none">
-
-
-
-  <div id="suggestibles">
-  </div>
-
-  <div class="claim_award_box award_feature pbl">
-  <h3 class="suggestion_title">Register now to claim your <span class="prize_name"></span>!</h3>
-  <ul class="registration_benefits mal pls">
-    <li class="mbm"><span class="kong_ico" aria-hidden="true">y</span>Get personalized game recommendations</li>
-    <li class="mbm"><span class="kong_ico" aria-hidden="true">c</span>Participate in chat and forums</li>
-    <li><span class="kong_ico" aria-hidden="true">a</span>Collect badges, level up, <br>and more!</li>
-  </ul>
-  <p class="mbm"><input class="btn btn_action btn_lrg" type="button" value="Register Now" onclick="holodeck.showSignupTab();"></p>
-  <p><strong><a href="#" onclick="active_user.activateInlineLogin(); return false;">Already a user? Log in »</a></strong></p>
-</div>
-</div>
-</div>
-                      <script id="accomplishments_tab_pane_template" type="text/html">
-                        <div id="accomplishments_tab_content">
-                        </div>
-                        <div id="high_scores_container" style="display:none;">
-                          <div id="high_scores">
-                          </div>
-                        </div>
-                        <div id="high_scores_spinner" style="display:none;">
-                          <span class="spinner spinner_big">loading</span>
-                        </div>
-                      </script>
-                      <script type="text/html" id="game_tab_pane_template">
-                        <!-- #game_info -->
-<div id="game_info_panel" class="collapsible_panel">
-  <p class="panel_handle spritegame closed_link mts"><a>Info</a></p>
-  <div id="game_info" class="panel_body cntrToggle media" style="display:none">
-    <h3 class="mbs hasLayout">Retro Bowl</h3>
-
-    <div class="creatorinfo unit size1of2 hasLayout">
-      <em>Created by:</em>
-      <p class="media">
-        <a class="imgMini" href="https://www.kongregate.com/accounts/siread"><img class="user_avatar " title="siread" alt="avatar for siread" height="16" width="16" src="https://cdn2.kongcdn.com/assets/avatars/defaults/frog.png?i10c=img.resize(width:16)" /></a>
-        <a class="bd" onclick="window.open(this.href);return false;" href="https://www.kongregate.com/accounts/siread">siread</a>
-      </p>
-    </div>
-    <div id="game_rating" class="gamerating unit size1of2 mbm">
-      <div class="plm">
-        <em id="rating_message">Rate this game:</em>
-        <div id="user_star_rating">
-          <div id="star_ratings_block">
-            <!--[if lte IE 7]><span class="inlinefix">.</span><![endif]--><span id="rating-indicator" class="spinner" style="display:none" title="loading&hellip;">&#8203;</span><ul id="star-rating-316009" class="star-rating spritegame"> <!-- leave inline for IE -->
-
-  <li><a class="star-1" title="Hated it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = &#39;You must have the Html plugin installed to rate this game.&#39;
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$(&#39;#star-rating-316009&#39;).each(Element.hide); Element.show(&#39;rating-indicator&#39;);; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$(&#39;#star-rating-316009 a&#39;).each(Element.show); Element.hide(&#39;rating-indicator&#39;); holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Rate&#39;);;}, parameters:&quot;prefix=\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=1\u0026star_rating_class=star-rating&quot; + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;Brx1g2XpK7Mvvp/IpK+6r70O1PSGBrFPqg7ZHRAZAPTFV4Dd0Ld1uxs9+DSLXH6Tp095uWRPd78Z+6COcuYEWg==&#39;)}); }; return false;">1</a></li>
-  <li><a class="star-2" title="Didn&#39;t like it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = &#39;You must have the Html plugin installed to rate this game.&#39;
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$(&#39;#star-rating-316009&#39;).each(Element.hide); Element.show(&#39;rating-indicator&#39;);; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$(&#39;#star-rating-316009 a&#39;).each(Element.show); Element.hide(&#39;rating-indicator&#39;); holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Rate&#39;);;}, parameters:&quot;prefix=\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=2\u0026star_rating_class=star-rating&quot; + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;89bLj0r4XkFBoYui8geQJFuEGZZA3xD927MrCquuYZMwPT7R/6YASXUi7F7d9FQYQcW026KW1g1oRlKZyVFlPQ==&#39;)}); }; return false;">2</a></li>
-  <li><a class="star-3" title="Liked it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = &#39;You must have the Html plugin installed to rate this game.&#39;
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$(&#39;#star-rating-316009&#39;).each(Element.hide); Element.show(&#39;rating-indicator&#39;);; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$(&#39;#star-rating-316009 a&#39;).each(Element.show); Element.hide(&#39;rating-indicator&#39;); holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Rate&#39;);;}, parameters:&quot;prefix=\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=3\u0026star_rating_class=star-rating&quot; + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;TOOh+gc+d0n8IxjDdp3cDe3zYgeVX6TRHXMfln9LDn2PCFSksmApQcigfz9Zbhgx97LPSncWYiGuhmYFHbQK0w==&#39;)}); }; return false;">3</a></li>
-  <li><a class="star-4" title="Really liked it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = &#39;You must have the Html plugin installed to rate this game.&#39;
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$(&#39;#star-rating-316009&#39;).each(Element.hide); Element.show(&#39;rating-indicator&#39;);; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$(&#39;#star-rating-316009 a&#39;).each(Element.show); Element.hide(&#39;rating-indicator&#39;); holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Rate&#39;);;}, parameters:&quot;prefix=\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=4\u0026star_rating_class=star-rating&quot; + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;rGOcVV6IGnBz22qB0J8Fz4sec0TYeXHeXiDQq3K7m2RviGkL69ZEeEdYDX3/bMHzkV/eCTowty7t1ak4EESfyg==&#39;)}); }; return false;">4</a></li>
-  <li><a class="star-5" title="Loved it" href="/ratings" onclick="if (      (function() {
-        if(!active_user.allowedToRateGame()){
-          var msg = &#39;You must have the Html plugin installed to rate this game.&#39;
-          holodeck.notifyOnGameTab(msg);
-          return false;
-        } else {
-          return true;
-        }
-      })()
-) { $$(&#39;#star-rating-316009&#39;).each(Element.hide); Element.show(&#39;rating-indicator&#39;);; new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){$$(&#39;#star-rating-316009 a&#39;).each(Element.show); Element.hide(&#39;rating-indicator&#39;); holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Rate&#39;);;}, parameters:&quot;prefix=\u0026rateable_id=316009\u0026rateable_type=Game\u0026rating=5\u0026star_rating_class=star-rating&quot; + &#39;&amp;authenticity_token=&#39; + encodeURIComponent(&#39;F0AtoWhWH1hM+0h+/G6Q/FQdUh+w8AY33PI+1F6+5iXUq9j/3QhBUHh4L4LTnVTATlz/UlK5wMdvB0dHPEHiiw==&#39;)}); }; return false;">5</a></li>
-</ul>
-
-          </div>
-        </div>
-        <p class="average_rating" id="game_tab_game_ratings_size"></p>
-        <p class="gameplays"><span class="gameplays_count"></span>&nbsp;plays</p>
-      </div>
-    </div>
-
-    <div class="media clear">
-      <ul id="game_actions_favorites" class="contributetools unit size1of2 mts">
-          <li class="share spritegame" id="quick_share_link">
-            <a href="#" onclick="holodeck.recordAnalyticsEvent(&#39;Quick&#39;, &#39;Share&#39;);holodeck.showShareTab(); return false;">Share game</a>
-          </li>
-        <li class="favorite spritegame" id="favorite_game">
-          <a id="favorite_link" class="user_specific" href="/accounts/KongregateHolodeckTemplateUsername/favorites?game_id=316009" onclick="$(&#39;favorite_link&#39;).hide(); $(&#39;favorite_indicator&#39;).show(); new Ajax.Request(this.href, {asynchronous:true, evalScripts:true, method:&#39;post&#39;, onComplete:function(request){holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Favorite&#39;);}, parameters:&#39;authenticity_token=&#39; + encodeURIComponent(&#39;DcoHpmVPjy9ns69LXYcvYZzDSyz0NitCVu6QYcaotQ7OIfL40BHRJ1MwyLdydOtdhoLmYRZ/7bLlG+nypFexoA==&#39;)}); return false;"><span class='kong_ico' aria-hidden='true'>l </span>Favorite</a> <!--[if lte IE 7]><span class="inlinefix">.</span><![endif]-->
-<span id="favorite_indicator" class="spinner" style="display:none" title="loading&hellip;">&#8203;</span>
-
-          <span class="favorites_count_indicator"><span class="favorites_count"></span>&nbsp;Favorites</span>
-        </li>
-      </ul>
-      <ul id="game_actions" class="contributetools unit size1of2 lastUnit mts">
-          <li class="bug_game spritegame">
-            <form onsubmit="      var logJson = Object.toJSON(holodeck.alertLog());
-      $$(&#39;.bug_report_log&#39;).each(function(ele) { ele.value = logJson; });
-      holodeck.recordAnalyticsEvent(&#39;Game_Bug&#39;, &#39;Bug&#39;);
-      return true;
-" method="POST" action="/feedbacks/new" target="_blank"><input type="hidden" name="game_id" value="316009" /><input type="hidden" name="log" class="bug_report_log" /><a href="#" onclick="var f=this.up(&#39;form&#39;);if(f.onsubmit()){f.submit()}; return false;"><span class='kong_ico' aria-hidden='true'>i </span>Game bug</a></form>
-          </li>
-        <li class="flag_game spritegame" id="flag_game_holder">
-          <a rel="nofollow" href="https://www.kongregate.com/games/siread/retro-bowl/flags" onclick="Element.show(&#39;flag_indicator&#39;); new Ajax.Updater(&#39;flag_game_holder&#39;, this.href, {asynchronous:true, evalScripts:true, onComplete:function(request){holodeck.recordAnalyticsEvent(&#39;Game&#39;, &#39;Flag&#39;); Element.update(&#39;game_flag&#39;, &#39;Game flagged&#39;); Element.hide(&#39;flag_indicator&#39;);}, parameters:&#39;authenticity_token=&#39; + encodeURIComponent(&#39;dpC381IjZk3lQFL2HQVNzdyAA7vP1oLJA2bY5CkacpK1e0Kt5304RdHDNQoy9onxxsGu9i2fRDmwk6F3S+V2PA==&#39;)}); return false;">Flag this game</a>
-          <span id="flag_indicator" class="spinner" style="display:none" title="loading&hellip;">&#8203;</span>
-        </li>
-    </ul>
-    </div>
-
-  </div>
-</div>
-
-
-<!-- #game_description -->
-<div id="game_description_panel" class="collapsible_panel">
-  <p class="panel_handle mvs spritegame closed_link"><a>Description</a></p>
-  <div id="game_description" class="panel_body cntrToggle splittext smltxt-reset" style="display:none">
-    <div class="show_more_text_block"><div class="truncated_text"><p>Retro Bowl is the perfect game for the armchair quarterback to finally prove a point. Presented in a&hellip;</p><a class="show_more spritegame" href="#" onclick="    $(this).up(&#39;.truncated_text&#39;).hide();
-    $(this).up(&#39;.show_more_text_block&#39;).down(&#39;.full_text&#39;).show();
-; return false;">show more</a></div><div class="full_text" style="display:none;"><p>Retro Bowl is the perfect game for the armchair quarterback to finally prove a point. Presented in a glorious retro style, the game has simple roster management, including press duties and the handling of fragile egos, while on the field you get to call the shots. Can you pass the grade and take your team all the way to the ultimate prize? Can you win the Retro Bowl?</p><a class="show_less spritegame" href="#" onclick="    $(this).up(&#39;.full_text&#39;).hide();
-    $(this).up(&#39;.show_more_text_block&#39;).down(&#39;.truncated_text&#39;).show();
-; return false;">show less</a></div></div>
-  </div>
-</div>
-
-<!-- #game_system_requirements -->
-
-<!-- #game_updates -->
-  <div id="game_updates_panel" class="collapsible_panel">
-    <p class="panel_handle mvs spritegame closed_link"><a>Game News</a></p>
-    <div id="game_updates" class="panel_body cntrToggle splittext" style="display:none">
-      <div class="error_message sitemessage cntrError js_news_item_error_message" style="display:none;"></div>
-<ul class="js_news_posts man" id="game_news_posts">
-  <li class="js_feed_item game_news_post mts mbl js_game_post_446008351 game_news_container">
-  <p class="game_news_timestamp h6 h6_alt mbs">Oct  4, 2021   6:09am 
-    <a style="display:none;" class="mls js_delete_post_button_446008351 game_news_delete" 
-        onclick="NewsPostBox.deletePost(446008351)">(delete post)</a>
-  </p>
-  <span class="spinner spinner_gray js_delete_post_spinner_446008351" style="display: none;"></span>
-  <div class="game_news_content smltxt-reset">
-    <p>Continue button doesn’t need to be pressed<br>
-Field goal range extended to 66 yards<br>
-Fixed 16-0 achievement<br>
-Updated stadium roof types<br>
-More chance of poor catchers dropping ball<br>
-Updated AI onside kick logic</p>
-  </div>
-</li>
-
-  <li class="js_feed_item game_news_post mts mbl js_game_post_445986952 game_news_container">
-  <p class="game_news_timestamp h6 h6_alt mbs">Sep 27, 2021   7:02am 
-    <a style="display:none;" class="mls js_delete_post_button_445986952 game_news_delete" 
-        onclick="NewsPostBox.deletePost(445986952)">(delete post)</a>
-  </p>
-  <span class="spinner spinner_gray js_delete_post_spinner_445986952" style="display: none;"></span>
-  <div class="game_news_content smltxt-reset">
-    <p>Fixed play-off seeding crash/schedule issue<br>
-Retro Bowl “home” team now random<br>
-Coordinator crash fix<br>
-Kick-off/continue buttons added</p>
-  </div>
-</li>
-
-  <li class="js_feed_item game_news_post mts mbl js_game_post_445970313 game_news_container">
-  <p class="game_news_timestamp h6 h6_alt mbs">Sep 21, 2021   4:11am 
-    <a style="display:none;" class="mls js_delete_post_button_445970313 game_news_delete" 
-        onclick="NewsPostBox.deletePost(445970313)">(delete post)</a>
-  </p>
-  <span class="spinner spinner_gray js_delete_post_spinner_445970313" style="display: none;"></span>
-  <div class="game_news_content smltxt-reset">
-    <p>Uniform update (thanks @RetroBitCoach)<br>
-17 game schedule<br>
-Bullet throws (second tap whilst aiming)<br>
-Added 1st down anim<br>
-Added cheerleader anim<br>
-QB attempts and completions not recorded for 2pt conversions<br>
-Fixed unlimited contract extensions<br>
-Increased name pool<br>
-Added choice of roof type in editor<br>
-Blitz tweak<br>
-Tweaked <span>CPU</span> team 4th down logic<br>
-Tweaked <span>CPU</span> team onside kick logic<br>
-Onside kicks offered on tied score<br>
-QB not credited with additional catch after a fumble<br>
-Player ratings adjusted according to quarter length<br>
-Divisional round seeding<br>
-Tiebreakers now H2H &gt; div/conf win pct &gt; net pts <br>
-Tweaked praise/criticise effect</p>
-  </div>
-</li>
-
-  <li class="js_feed_item game_news_post mts mbl js_game_post_445549467 game_news_container">
-  <p class="game_news_timestamp h6 h6_alt mbs">May 21, 2021   3:09am 
-    <a style="display:none;" class="mls js_delete_post_button_445549467 game_news_delete" 
-        onclick="NewsPostBox.deletePost(445549467)">(delete post)</a>
-  </p>
-  <span class="spinner spinner_gray js_delete_post_spinner_445549467" style="display: none;"></span>
-  <div class="game_news_content smltxt-reset">
-    <p>Fixed potential being lower than rating<br>
-Fixed game rating issues<br>
-Fixed blue text<br>
-Tweaked <span>DPOY</span> award</p>
-  </div>
-</li>
-
-  <li class="js_feed_item game_news_post mts mbl js_game_post_445532074 game_news_container">
-  <p class="game_news_timestamp h6 h6_alt mbs">May 19, 2021   6:34am 
-    <a style="display:none;" class="mls js_delete_post_button_445532074 game_news_delete" 
-        onclick="NewsPostBox.deletePost(445532074)">(delete post)</a>
-  </p>
-  <span class="spinner spinner_gray js_delete_post_spinner_445532074" style="display: none;"></span>
-  <div class="game_news_content smltxt-reset">
-    <p>Achievement issue fixed<br>
-Fixed conference names on job offer screen<br>
-Fixed difficulty level display during replays in snow<br>
-Fixed OL fan rating<br>
-Tweaked player awards<br>
-Fixed force fumble affect on game rating<br>
-Fixed 5 star player ratings<br>
-Added Tampa Bay to RB winners list (new careers)<br>
-Fixed scout button on maxed potential players<br>
-Retirement delay costs are exponential<br>
-Patched keyboard exploit</p>
-  </div>
-</li>
-
-</ul>
-
-    </div>
-  </div>
-
-  <!-- #game_instructions -->
-  <div id="game_instructions_panel" class="collapsible_panel">
-    <p class="panel_handle mvs spritegame closed_link"><a>Instructions</a></p>
-    <div id="game_instructions" class="panel_body cntrToggle splittext smltxt-reset" style="display:none">
-      <p>Left click then drag and aim a throw.<br>
-A,W,S,D to dodge and dive.</p>
-    </div>
-  </div>
-
-
-                      </script>
-                      <script type="text/html" id="chat_notification_received_private_message">
-                        <p class="whisper received_whisper">
-                          <span class="username chat_message_window_username">#{username}</span><span class="separator">: </span>
-                            <span class="message">
-                              Want to join my private chat room?
-                              <a href='#' class='yes'>Join</a>/<a href='#' class='no'>Ignore</a>
-                            </span>
-                            <span class="clear">
-                          </span>
-                        </p>
-                      </script>
-                      <script type="text/html" id="user_row_template">
-                        <span class="name_group">
-                          <img class="chat_avatar" style="#{avatarStyle}" src="#{avatarSrc}"/>
-                          <span id="#{usernameNodeId}" class="username spritesite levelbug level_#{level} js-user-chat-hover truncate" username="#{username}">#{username}</span>
-                          <span class="#{extraIconClass} rank_icon" title="#{extraIconTitle}">#{extraIconType}</span>
-                          <span class="spritesite premium_icon" title="Kongregate Plus">Kongregate Plus</span>
-                          #{extraIconTags}
-                          <span class="spritesite friend_icon" title="Friend">Friend</span>
-                        </span>
-                        <span class="name_group">
-                          <span class="guild-name truncate" username="#{username}">#{game_character_name}</span>
-                          <span class="spritesite mobile_icon">Mobile</span>
-                        </span>
-                        <div class="clear"></div>
-                      </script>
-                      <script type="text/html" id="admin_message_template">
-                        <div class="admin_message cntrNotify hasLayout">#{content}</div>
-                        <div class="clear"></div>
-                      </script>
-                      <script id="chat_actions_dropdown_template" type="text/html">
-                        <span class="btn btn_tools btn_target pan">
-                          <span class="kong_ico btn_target" aria-hidden="true">s</span>
-                          <span>Tools</span>
-                        </span>
-                        <ul class="chat_actions_list" style="display:none">
-                          <li data-chat-action="leave_private" class="action exclude_game exclude_chat exclude_guild">Leave private chat</li>
-                          <li data-chat-action="leave_guild" class="action exclude_game exclude_chat exclude_private">Leave guild chat</li>
-                          <li data-chat-action="room_chooser" class="action exclude_private">Change chat rooms</li>
-                          <li data-chat-action="friends_online" class="action">See friends online</li>
-                          <li data-chat-action="room_details" class="action exclude_game exclude_private exclude_guild">Room info & help</li>
-                          <li data-chat-action="favorite_room" class="action favorite_room hasLayout exclude_game exclude_private exclude_guild">Favorite this room</li>
-                          <li data-chat-action="set_status" class="action set_status hasLayout">Set status: Away</li>
-                        </ul>
-                      </script>
-                      <script id="signup_tab_pane_template" type="text/html">
-                        <div id="signup_tab_form" class="signup_tab_form hasLayout">
-                          <div id="facebook-connect-wrapper" style="display: none;">
-  <h3 class="fb_signup_title sprite_facebook h2 mts mbm">Welcome to Kongregate</h3>
-<p class="mts mbm">Register now to save your earned badges, chat with other players, and share your progress with your friends.</p>
-<div class="cntrToggle pam fb_signup_cta">
-  <h4 class="h2 mvm fb_signup_header sprite_facebook"><span class="fb_signup_header_text"><span class="sprite_facebook fb_signup_header_icon"></span>Sign up now:</span></h4>
-  <a title="Sign in with Facebook" class="facebook_signin_large sprite_facebook mvl" onclick="new FacebookAuthenticator({}); return false;" href="#">Connect with Facebook</a>
-  <iframe id="facebook-facepile" src="//www.facebook.com/plugins/facepile.php?action&amp;size=medium&amp;max_rows=1&amp;width=249&amp;colorscheme=light&amp;app_id=218282488189771" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:264px;" allowTransparency="true"></iframe>
-  <p class="mts mbl">or <a id="email-signup-link" href="#">Sign Up with Email</a></p>
-</div>
-
-</div>
-<div id="normal-registration-wrapper">
-  <h3 class="spritegame">Become a <strong>Kongregate member for free!</strong></h3>
-  <p class="mts mbm">
-    Sign up now to save your badges, points and progress. You'll also be eligible for free video games and prizes!!!
-    <em>&#40;<a href="#" onclick="active_user.activateInlineLogin(); return false;">Already a member?</a>&#41;</em>
-  </p>
-  <p class="signup_tab_form_submit_error mbs ctnr ctnrError" id="submit_error_message" style="display: none;">
-    We encountered a problem. Please try again.
-  </p>
-  <div class="cntrToggle baseform">
-    <form id="registration_form" onsubmit="if(window.DynamicFrameTarget){ new DynamicFrameTarget({form: this, callback: function(response) { if (response.success) { user_status.accountCreationSuccess(response) } else { user_status.accountCreationFailure(response)  } }});}" class="new_user" action="https://www.kongregate.com/accounts" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Qh2PN87yhaLY9Pf64JPFPGtilDH0pKOKgfZdygJ0kJKB9nppe6zbqux3kAbPYAEAcSM5fBbtZXoyAyRZYIuUPA==" />
-    
-
-<input type="hidden" name="game_id" id="game_id" value="316009" />
-
-
-<input type="hidden" name="user[age_concern]" id="user_age_concern" value="" class="registration_age_concern" />
-
-<div class="cntrError mam pam" id="registration_form_base_errors" style="display: none;"></div>
-<div class="email_field form_block">
-  <div class="form_block" id="registration_form_email_address_block">
-  <div class="label_block" id="registration_form_email_address_label_block">
-    <label id="registration_form_email_address_label" for="registration_form_email_address">Email Address</label>
-  </div>
-  <div id="registration_form_email_address_control_block" class="input_block"><input id="registration_form_email_address" type="text" name="user[email_address]" /></div>
-  <div class="error_block error" id="registration_form_email_address_error_block">
-    
-  </div>
-</div>
-
-  <div id="registration_form_opt_in_block" class="checkbox">
-  <div class="control_block" id="registration_form_opt_in_control_block">
-    <input name="user[opt_in]" type="hidden" value="0" /><input id="registration_form_opt_in" tabindex="-1" class="check_box mts opt-in-chk" type="checkbox" value="1" checked="checked" name="user[opt_in]" />
-    <label id="registration_form_opt_in_label" class="check_box_label" for="registration_form_opt_in">Send me updates</label>
-  </div>
-  <div class="error_block error" id="registration_form_opt_in_error_block">
-  </div>
-</div>
-
-</div>
-<div class="form_block" id="registration_form_password_block">
-  <div class="label_block" id="registration_form_password_label_block">
-    <label id="registration_form_password_label" for="registration_form_password">Password</label>
-    <em id="registration_form_password_explanation_block">(min. 10 characters)</em>
-  </div>
-  <div id="registration_form_password_control_block" class="input_block"><input id="registration_form_password" type="password" name="user[password]" /></div>
-  <div class="error_block error" id="registration_form_password_error_block">
-    
-  </div>
-</div>
-
-<div class="form_block" id="registration_form_birth_date_block">
-  <div class="label_block" id="registration_form_birth_date_label_block">
-    <label id="registration_form_birth_date_label" for="registration_form_birth_date">Date of Birth</label>
-  </div>
-  <div id="registration_form_birth_date_control_block" class="input_block"><select name="user[birth_date(2i)]" class="registration_form_date_select">
-<option value=""></option>
-<option value="1">January</option>
-<option value="2">February</option>
-<option value="3">March</option>
-<option value="4">April</option>
-<option value="5">May</option>
-<option value="6">June</option>
-<option value="7">July</option>
-<option value="8">August</option>
-<option value="9">September</option>
-<option value="10">October</option>
-<option value="11">November</option>
-<option value="12">December</option>
-</select>
-<select name="user[birth_date(3i)]" class="registration_form_date_select">
-<option value=""></option>
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-<option value="6">6</option>
-<option value="7">7</option>
-<option value="8">8</option>
-<option value="9">9</option>
-<option value="10">10</option>
-<option value="11">11</option>
-<option value="12">12</option>
-<option value="13">13</option>
-<option value="14">14</option>
-<option value="15">15</option>
-<option value="16">16</option>
-<option value="17">17</option>
-<option value="18">18</option>
-<option value="19">19</option>
-<option value="20">20</option>
-<option value="21">21</option>
-<option value="22">22</option>
-<option value="23">23</option>
-<option value="24">24</option>
-<option value="25">25</option>
-<option value="26">26</option>
-<option value="27">27</option>
-<option value="28">28</option>
-<option value="29">29</option>
-<option value="30">30</option>
-<option value="31">31</option>
-</select>
-<select name="user[birth_date(1i)]" class="registration_form_date_select">
-<option value=""></option>
-<option value="1940">1940</option>
-<option value="1941">1941</option>
-<option value="1942">1942</option>
-<option value="1943">1943</option>
-<option value="1944">1944</option>
-<option value="1945">1945</option>
-<option value="1946">1946</option>
-<option value="1947">1947</option>
-<option value="1948">1948</option>
-<option value="1949">1949</option>
-<option value="1950">1950</option>
-<option value="1951">1951</option>
-<option value="1952">1952</option>
-<option value="1953">1953</option>
-<option value="1954">1954</option>
-<option value="1955">1955</option>
-<option value="1956">1956</option>
-<option value="1957">1957</option>
-<option value="1958">1958</option>
-<option value="1959">1959</option>
-<option value="1960">1960</option>
-<option value="1961">1961</option>
-<option value="1962">1962</option>
-<option value="1963">1963</option>
-<option value="1964">1964</option>
-<option value="1965">1965</option>
-<option value="1966">1966</option>
-<option value="1967">1967</option>
-<option value="1968">1968</option>
-<option value="1969">1969</option>
-<option value="1970">1970</option>
-<option value="1971">1971</option>
-<option value="1972">1972</option>
-<option value="1973">1973</option>
-<option value="1974">1974</option>
-<option value="1975">1975</option>
-<option value="1976">1976</option>
-<option value="1977">1977</option>
-<option value="1978">1978</option>
-<option value="1979">1979</option>
-<option value="1980">1980</option>
-<option value="1981">1981</option>
-<option value="1982">1982</option>
-<option value="1983">1983</option>
-<option value="1984">1984</option>
-<option value="1985">1985</option>
-<option value="1986">1986</option>
-<option value="1987">1987</option>
-<option value="1988">1988</option>
-<option value="1989">1989</option>
-<option value="1990">1990</option>
-<option value="1991">1991</option>
-<option value="1992">1992</option>
-<option value="1993">1993</option>
-<option value="1994">1994</option>
-<option value="1995">1995</option>
-<option value="1996">1996</option>
-<option value="1997">1997</option>
-<option value="1998">1998</option>
-<option value="1999">1999</option>
-<option value="2000">2000</option>
-<option value="2001">2001</option>
-<option value="2002">2002</option>
-<option value="2003">2003</option>
-<option value="2004">2004</option>
-<option value="2005">2005</option>
-<option value="2006">2006</option>
-<option value="2007">2007</option>
-<option value="2008">2008</option>
-<option value="2009">2009</option>
-<option value="2010">2010</option>
-<option value="2011">2011</option>
-<option value="2012">2012</option>
-<option value="2013">2013</option>
-<option value="2014">2014</option>
-<option value="2015">2015</option>
-<option value="2016">2016</option>
-<option value="2017">2017</option>
-<option value="2018">2018</option>
-</select>
-</div>
-  <div class="error_block error" id="registration_form_birth_date_error_block">
-    
-  </div>
-</div>
-
-<div class="form_block" id="registration_form_username_block">
-  <div class="label_block" id="registration_form_username_label_block">
-    <label id="registration_form_username_label" for="registration_form_username">Username</label>
-    <em id="registration_form_username_explanation_block">(4-16 characters)</em>
-  </div>
-  <div id="registration_form_username_control_block" class="input_block"><input id="registration_form_username" type="text" name="user[username]" /></div>
-  <div class="error_block error" id="registration_form_username_error_block">
-    
-  </div>
-</div>
-
-<div class="form_block regtext privacy_form_block checkbox-grp">
-  <div id="registration_form_privacy_policy_consent_block" class="checkbox">
-  <div class="control_block" id="registration_form_privacy_policy_consent_control_block">
-    <input name="user[privacy_policy_consent]" type="hidden" value="0" /><input id="registration_form_privacy_policy_consent" class="check_box privacy_policy_checkbox" type="checkbox" value="1" name="user[privacy_policy_consent]" />
-    <label id="registration_form_privacy_policy_consent_label" class="check_box_label" for="registration_form_privacy_policy_consent">I have read and agree to the <a onclick="window.open(this.href);return false;" href="/privacy">Privacy Policy</a>, <a onclick="window.open(this.href);return false;" href="/user-agreement">User Agreement</a> and <a onclick="window.open(this.href);return false;" href="/cookie-policy">Cookie Policy</a></label>
-  </div>
-  <div class="error_block error" id="registration_form_privacy_policy_consent_error_block">
-  </div>
-</div>
-
-</div>
-<div class="form_block regtext parental_consent_form_block">
-  <div class="form_block" id="registration_form_parent_email_block">
-  <div class="label_block" id="registration_form_parent_email_label_block">
-    <label id="registration_form_parent_email_label" for="registration_form_parent_email">Parent or guardian email address</label>
-    <em id="registration_form_parent_email_explanation_block">Your parent or guardian must review and agree on your behalf to register</em>
-  </div>
-  <div id="registration_form_parent_email_control_block" class="input_block"><input id="registration_form_parent_email" class="parent_email" type="text" name="user[parent_email]" /></div>
-  <div class="error_block error" id="registration_form_parent_email_error_block">
-    
-  </div>
-</div>
-
-</div>
-
-    <input type="hidden" name="recaptcha_token" class="recaptcha_token_field" />
-    <div class="submit_button form_block">
-      <p class="cta-outer">
-        <input type="submit" value="Create My Account" id="registration_form_submit_button" class="btn btn_action" onclick="try{}catch(e){};if(!this.elem_registration_form_submit_button){this.elem_registration_form_submit_button=$(&#39;registration_form_submit_button&#39;);this.spin_registration_form_submit_button=$(&#39;registration_form_submit_button_spinner&#39;);this.restore=function(t){return function(){t.elem_registration_form_submit_button.show();t.spin_registration_form_submit_button.hide();Event.stopObserving(window, &#39;unload&#39;, t.restore);}}(this);}this.elem_registration_form_submit_button.hide();this.spin_registration_form_submit_button.show();Event.observe(window, &#39;unload&#39;, this.restore);" data-disable-with="Create My Account" /><span id="registration_form_submit_button_spinner" class="spinner" style="display:none" title="loading&hellip;">&#8203;</span>
-      </p>
-    </div>
-    <div class="g-recaptcha" id="grecaptcha-target"
-      data-sitekey="6LdzZjQUAAAAANyruFjOROmzLKQofUeJA5sIaPf3"
-      data-size="invisible">
-    </div>
-</form>
-
-  </div>
-</div>
-
-
-                        </div>
-                      </script>
-                      <script type="text/html" id="levelup_content_template">
-                        <div class="hololevel_outer award_banner ptl">
-                          <div class="award_feature">
-                            <h4 class="award_title">Congratulations, #{username}</h4>
-                            <p class="h1 new_level holodeck_kongbot_happy">You&rsquo;re now level #{level}!</p>
-                            <p class="regtext">
-                              <span id="hololevel_next_level_message">
-                                Earn #{points_away} more points to reach level #{next_level}!
-                              </span>
-                              <span id="hololevel_max_level_message" style="display: none;">
-                                Congratulations, you've reached Kongregate's level cap!
-                              </span>
-                            </p>
-                            <span class="stars kong_ico" aria-hidden="true">***</span>
-                          </div>
-                        </div>
-                      </script>
-                      <div class="c-sticker-preview">
-                        <img src="" class="c-sticker-preview__img">
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div><!-- flashframecontent -->
-          </div><!-- /#maingamecontent -->
-      </div>
+	</div>
+	  </section>
+	  <div class = "fsbutton">
+		<a class="myButton" onclick="goFullscreen()"><i class="material-icons tabz">crop_free</i>Fullscreen</a>
+	  <script>
+		  var elem = document.getElementById("gameContainer");
+		  function goFullscreen() {
+		  if (elem.requestFullscreen) {
+		  elem.requestFullscreen();
+		  } else if (elem.mozRequestFullScreen) {
+		  elem.mozRequestFullScreen();
+		  } else if (elem.webkitRequestFullscreen) {
+		  elem.webkitRequestFullscreen();
+		  } else if (elem.msRequestFullscreen) {
+		  elem.msRequestFullscreen();
+		  }
+		  }
+	  </script></div>
+	  <div class="titletext">
+		  <ul class="tabs" role="tablist">
+		  <li>
+			  <input type="radio" name="tabs" id="tab1" checked />
+			  <label for="tab1" role="tab" aria-selected="true" aria-controls="panel1" tabindex="0"><i class="material-icons tabz">article</i>Description</label>
+			  <div id="tab-content1" class="tab-content" role="tabpanel" aria-labelledby="description" aria-hidden="false">
+			  <p class="desc">Slope is the ultimate running game that will put your skills to the test. Speed down on a randomized slope. The farther you go, the faster your ball travels. This game might look simple but playing this will give you extreme adrenaline rush. Just remember to avoid obstacles and those red blocks. Always be on track to get a high score and you might have your name on the leaderboard!</p>
+			  </div>
+		  </li>
+		  <li>
+			  <input type="radio" name="tabs" id="tab2" />
+			  <label for="tab2" role="tab" aria-selected="false" aria-controls="panel2" tabindex="0"><i class="material-icons tabz">keyboard</i>Controls</label>
+			  <div id="tab-content2" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+			  <p class="desc">AD/QD/Arrow Keys: Control movement</p>
+			  </div>
+		  </li>
+		  <li>
+			  <input type="radio" name="tabs" id="tab3" />
+			  <label for="tab3" role="tab" aria-selected="false" aria-controls="panel3" tabindex="0"><i class="material-icons tabz">verified</i>Developer</label>
+			  <div id="tab-content3" class="tab-content" role="tabpanel" aria-labelledby="specification" aria-hidden="true">
+			  <p class="desc">This game was created by Rob Kay!</p>
+			  </div>
+		  </li>
+		  </ul>
+	  </div>
+	  <div class="test">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      <div align="center"><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Horizontal Ads -->
+      <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-5287266392597979"
+         data-ad-slot="1416948905"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+      <script>
+         (adsbygoogle = window.adsbygoogle || []).push({});
+      </script></div></div>
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-9bf952ccbbd13c245169a0a1190323a27ce073a3d304b8c0fdf421ab22794a58.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script id="rendered-js">
+(function ($) {"use strict";
+
+  //Navigation
+
+  var app = function () {
+    var body = undefined;
+    var menu = undefined;
+    var menuItems = undefined;
+    var init = function init() {
+      body = document.querySelector('body');
+      menu = document.querySelector('.menu-icon');
+      menuItems = document.querySelectorAll('.nav__list-item');
+      applyListeners();
+    };
+    var applyListeners = function applyListeners() {
+      menu.addEventListener('click', function () {
+        return toggleClass(body, 'nav-active');
+      });
+    };
+    var toggleClass = function toggleClass(element, stringClass) {
+      if (element.classList.contains(stringClass)) element.classList.remove(stringClass);else element.classList.add(stringClass);
+    };
+    init();
+  }();
+
+
+  //Switch light/dark actual
+
+  $("#switch").on('click', function () {
+    if ($("body").hasClass("light")) {
+      $("body").removeClass("light");
+      $("#switch").removeClass("switched");
+    } else
+    {
+      $("body").addClass("light");
+      $("#switch").addClass("switched");
+    }
+  });
+
+})(jQuery);
+
+
+/* Please ❤ this if you like it! */
+
+
+
+(function ($) {"use strict";
+
+  //Switch dark/light
+
+  $(".switch").on('click', function () {
+    if ($("body").hasClass("light")) {
+      $("body").removeClass("light");
+      $(".switch").removeClass("switched");
+    } else
+    {
+      $("body").addClass("light");
+      $(".switch").addClass("switched");
+    }
+  });
+
+  $(document).ready(function () {"use strict";
+
+    //Scroll back to top
+
+    var progressPath = document.querySelector('.progress-wrap path');
+    var pathLength = progressPath.getTotalLength();
+    progressPath.style.transition = progressPath.style.WebkitTransition = 'none';
+    progressPath.style.strokeDasharray = pathLength + ' ' + pathLength;
+    progressPath.style.strokeDashoffset = pathLength;
+    progressPath.getBoundingClientRect();
+    progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
+    var updateProgress = function () {
+      var scroll = $(window).scrollTop();
+      var height = $(document).height() - $(window).height();
+      console.log($(document).height());
+      console.log($(window).height());
+      var progress = pathLength - scroll * pathLength / height;
+      progressPath.style.strokeDashoffset = progress;
+    };
+    updateProgress();
+    $(window).scroll(updateProgress);
+    var offset = 50;
+    var duration = 550;
+    jQuery(window).on('scroll', function () {
+      if (jQuery(this).scrollTop() > offset) {
+        jQuery('.progress-wrap').addClass('active-progress');
+      } else {
+        jQuery('.progress-wrap').removeClass('active-progress');
+      }
+    });
+    jQuery('.progress-wrap').on('click', function (event) {
+      event.preventDefault();
+      jQuery('html, body').animate({ scrollTop: 0 }, duration);
+      return false;
+    });
+
+
+  });
+
+})(jQuery);
+//# sourceURL=pen.js
+	</script>
+		<script type="text/javascript">
+			var sc_project=12471302; 
+			var sc_invisible=1; 
+			var sc_security="9a266461"; 
+			var sc_https=1; 
+			</script>
+			<script type="text/javascript"
+			src="https://www.statcounter.com/counter/counter.js" async></script>
+			<noscript><div class="statcounter"><a title="Web Analytics"
+			href="https://statcounter.com/" target="_blank"><img class="statcounter"
+			src="https://c.statcounter.com/12471302/0/9a266461/1/" alt="Web
+			Analytics"></a></div></noscript>
+</body>
+</html>
